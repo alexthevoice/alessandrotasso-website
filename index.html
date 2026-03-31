@@ -138,7 +138,7 @@ section{padding:100px 32px}
 .svc-lead{font-size:17px;color:var(--gray-600);line-height:1.75;max-width:800px}
 
 /* Service content grid - alternating */
-.svc-content{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.svc-content{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:start}
 .svc-content.reverse{direction:rtl}
 .svc-content.reverse>*{direction:ltr}
 .svc-text p{font-size:15px;color:var(--gray-600);line-height:1.75;margin-bottom:16px}
@@ -162,7 +162,7 @@ section{padding:100px 32px}
 .svc-gallery.cols-1{grid-template-columns:1fr}
 .svc-screen{border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow-md);transition:all 0.3s;cursor:pointer;position:relative}
 .svc-screen:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
-.svc-screen img{width:100%;display:block}
+.svc-screen img{width:100%;display:block;max-height:400px;object-fit:cover;object-position:top}
 .svc-screen-caption{padding:10px 14px;background:var(--gray-50);font-size:11px;color:var(--gray-500);font-weight:500;border-top:1px solid var(--gray-200)}
 .svc-alt .svc-screen-caption{background:var(--white)}
 .svc-screen-zoom{position:absolute;top:12px;right:12px;width:32px;height:32px;background:rgba(15,36,64,0.7);border-radius:8px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s}
@@ -324,10 +324,6 @@ section{padding:100px 32px}
       <div class="hero-badge"><span class="hero-badge-dot"></span>Automotive Profit Manager</div>
       <h1>Vendi di pi&ugrave;,<br>meglio e in modo <span>differenziante</span></h1>
       <p class="hero-sub">Affianco concessionarie e imprenditori dell'auto per migliorare margini, processi e posizionamento. Con strumenti digitali, consulenza strategica e una domanda: &ldquo;Cosa ti rende davvero unico?&rdquo;</p>
-      <div class="hero-actions">
-        <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Prenota una Call Gratuita</a>
-      </div>
       <div class="hero-who">
         <a href="#dealer-suite" class="hero-who-btn dealer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
@@ -436,7 +432,7 @@ section{padding:100px 32px}
       </div>
     </div>
   </div>
-  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri il Simulatore &rarr;</a></div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-primary btn-lg">Scopri il Simulatore &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 2. STOCK PERFORMANCE INDEX ═══ -->
@@ -469,7 +465,7 @@ section{padding:100px 32px}
       </div>
     </div>
   </div>
-  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri lo SPI &rarr;</a></div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-primary btn-lg">Scopri lo SPI &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 3. AMI ═══ -->
@@ -499,7 +495,7 @@ section{padding:100px 32px}
       </div>
     </div>
   </div>
-  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri l'AMI &rarr;</a></div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-primary btn-lg">Scopri l'AMI &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 4. RP ═══ -->
@@ -530,7 +526,7 @@ section{padding:100px 32px}
       </div>
     </div>
   </div>
-  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri le RP &rarr;</a></div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-primary btn-lg">Scopri le RP &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 5. CRUSCOTTO ISTANTANEO ═══ -->
@@ -565,7 +561,7 @@ section{padding:100px 32px}
       </div>
     </div>
   </div>
-  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri il Cruscotto &rarr;</a></div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-primary btn-lg">Scopri il Cruscotto &rarr;</a></div>
 </div></div>
 
 <!-- ═══ PERSONAL CAR SHOPPER ═══ -->
@@ -589,7 +585,7 @@ section{padding:100px 32px}
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><path d="M5 12h14"/></svg>
           Configura la Tua Auto
         </a>
-        <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-outline">Prenota una Call &rarr;</a>
+        <a href="https://alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-outline">Prenota una Call &rarr;</a>
       </div>
     </div>
     <div class="private-videos">
@@ -650,15 +646,15 @@ section{padding:100px 32px}
       <div class="faq-col-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Per i Dealer</div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-q">Quanto tempo serve per attivare Dealer Suite?</div>
-        <div class="faq-a"><p>L'attivazione &egrave; immediata: ti registri, ricevi 100 crediti omaggio e puoi iniziare subito a usare tutti e 5 i servizi. Per il Simulatore e il Cruscotto &egrave; prevista una breve fase di configurazione dove personalizziamo le finanziarie e i parametri del tuo salone &mdash; di solito bastano 1-2 call.</p></div>
+        <div class="faq-a"><p>L'attivazione &egrave; immediata: ti registri, ricevi 100 crediti omaggio e puoi iniziare subito a usare tutti e 5 i servizi. Per il Simulatore e il Cruscotto &egrave; prevista una fase di configurazione dove personalizziamo le finanziarie e i parametri del tuo salone, prenota una call e fissiamo l'appuntamento e/o una call</p></div>
       </div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-q">Funziona anche per saloni piccoli?</div>
-        <div class="faq-a"><p>Assolutamente s&igrave;, anzi: &egrave; proprio l&igrave; che l'impatto &egrave; pi&ugrave; immediato. I saloni piccoli hanno meno struttura da cambiare e pi&ugrave; velocit&agrave; di esecuzione. Ho visto saloni da 30 vetture iniziare a marginare in modo completamente diverso nel giro di poche settimane dall'attivazione.</p></div>
+        <div class="faq-a"><p>Assolutamente s&igrave;, anzi: &egrave; proprio l&igrave; che l'impatto &egrave; pi&ugrave; immediato. I saloni piccoli hanno meno struttura da cambiare e pi&ugrave; velocit&agrave; di esecuzione. Ho visto saloni da 30 vetture iniziare a marginare in modo completamente diverso nel giro di pochi giorni dall'attivazione.</p></div>
       </div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-q">Come funziona il sistema a crediti?</div>
-        <div class="faq-a"><p>Ogni servizio consuma un certo numero di crediti: lo SPI 1 credito per veicolo analizzato, le RP 10 crediti per report generato, l'AMI 100 crediti per analisi completa. Puoi ricaricare i crediti in qualsiasi momento direttamente dal portale. All'iscrizione ricevi 100 crediti omaggio per testare tutto.</p></div>
+        <div class="faq-a"><p>Ogni servizio consuma un certo numero di crediti: lo SPI 1 credito per veicolo analizzato, le RP 10 crediti per report generato, l'AMI 50 crediti per analisi completa. Puoi ricaricare i crediti in qualsiasi momento direttamente dal portale. All'iscrizione ricevi 100 crediti omaggio per testare tutto.</p></div>
       </div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-q">Posso provare i servizi prima di impegnarmi?</div>
@@ -693,7 +689,7 @@ section{padding:100px 32px}
   <h2>Pronto a fare il salto<br>di qualit&agrave;?</h2>
   <p>Prenota una consulenza gratuita: ti ascolto, analizzo la tua situazione e ti dico come posso aiutarti. Gratis, per cominciare. Con entusiasmo, visione e risultati.</p>
   <div class="cta-buttons">
-    <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-gold">
+    <a href="https://alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-gold">
       <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Prenota una Call Gratuita</a>
     <a href="https://dealersuite.alessandrotasso.it" class="btn btn-outline">Accedi a Dealer Suite &rarr;</a>
   </div>
@@ -715,6 +711,7 @@ section{padding:100px 32px}
     <span class="footer-copy">&copy; 2026 Alessandro Tasso. Tutti i diritti riservati.</span>
   </div>
   <div class="footer-links">
+    <a href="mailto:info@alessandrotasso.it">info@alessandrotasso.it</a>
     <a href="#">Privacy Policy</a>
     <a href="#">Termini di Servizio</a>
     <a href="https://dealersuite.alessandrotasso.it">Dealer Suite</a>
