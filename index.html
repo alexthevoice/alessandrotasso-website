@@ -55,7 +55,7 @@ img{max-width:100%;height:auto}
 
 /* Who are you buttons */
 .hero-who{display:flex;gap:16px;flex-wrap:wrap}
-.hero-who-btn{display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.3s;border:2px solid}
+.hero-who-btn{display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.3s;border:2px solid;flex:1;min-width:220px;justify-content:center}
 .hero-who-btn.dealer{background:rgba(26,138,154,0.12);border-color:rgba(26,138,154,0.3);color:var(--teal)}
 .hero-who-btn.dealer:hover{background:rgba(26,138,154,0.2);border-color:var(--teal);transform:translateY(-2px)}
 .hero-who-btn.privato{background:rgba(200,168,78,0.12);border-color:rgba(200,168,78,0.3);color:var(--gold)}
@@ -66,12 +66,12 @@ img{max-width:100%;height:auto}
 /* Hero card */
 .hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-xl);padding:32px;backdrop-filter:blur(10px)}
 .hero-card-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:600;margin-bottom:20px}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .hero-stat{text-align:center;padding:16px 12px;background:rgba(255,255,255,0.04);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.06)}
 .hero-stat-number{font-size:24px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:2px}
 .hero-stat-label{font-size:10px;color:rgba(255,255,255,0.4);font-weight:500}
 .hero-stat-number.gold{color:var(--gold)}.hero-stat-number.teal{color:var(--teal)}
-.hero-stats-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.hero-stats-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
 
 /* STATS BAR */
 .stats-bar{background:var(--white);border-bottom:1px solid var(--gray-200);padding:48px 32px}
@@ -303,7 +303,7 @@ section{padding:100px 32px}
 
 <!-- NAV -->
 <nav class="nav"><div class="nav-inner">
-  <a href="#" class="nav-brand"><img src="logo-white.png" alt="Alessandro Tasso" class="nav-logo-img"></a>
+  <a href="#" class="nav-brand"><img src="LogoAlessandroTasso White.png" alt="Alessandro Tasso" class="nav-logo-img"></a>
   <button class="nav-mobile-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
   <ul class="nav-links">
     <li><a href="#cosa-faccio">Cosa Faccio</a></li>
@@ -343,12 +343,12 @@ section{padding:100px 32px}
       <div class="hero-card-label">Piattaforma Dealer Suite</div>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-number gold">SIM</div><div class="hero-stat-label">Simulatore Multiservizi</div></div>
-        <div class="hero-stat"><div class="hero-stat-number teal">SPI</div><div class="hero-stat-label">Stock Performance Index</div></div>
-        <div class="hero-stat"><div class="hero-stat-number">AMI</div><div class="hero-stat-label">Automotive Margin Index</div></div>
+        <div class="hero-stat"><div class="hero-stat-number teal">CRI</div><div class="hero-stat-label">Cruscotto Istantaneo</div></div>
       </div>
       <div class="hero-stats-row2">
+        <div class="hero-stat"><div class="hero-stat-number teal">SPI</div><div class="hero-stat-label">Stock Performance Index</div></div>
+        <div class="hero-stat"><div class="hero-stat-number">AMI</div><div class="hero-stat-label">Automotive Margin Index</div></div>
         <div class="hero-stat"><div class="hero-stat-number gold">RP</div><div class="hero-stat-label">Relazioni Professionali</div></div>
-        <div class="hero-stat"><div class="hero-stat-number teal">CRI</div><div class="hero-stat-label">Cruscotto Istantaneo</div></div>
       </div>
     </div>
   </div>
@@ -418,7 +418,7 @@ section{padding:100px 32px}
     <div class="svc-text">
       <p>Ogni venditore perde tempo prezioso saltando da un simulatore all'altro, rischiando errori e dimenticando di proporre servizi che generano margine. Il SIM risolve questo problema alla radice: in una sola schermata il venditore configura finanziamento, polizza furto e incendio, estensione garanzia, antifurto, mobilit&agrave; e genera il piano di ammortamento che lo guida a parlare di <strong>valore futuro della vettura e buyback</strong> con il cliente.</p>
       <div class="svc-highlight">
-        <p><strong>Le provvigioni vengono calcolate in tempo reale</strong>, sia per il venditore che per il dealer. Nessuna sorpresa a fine mese. Il venditore sa esattamente quanto guadagna su ogni operazione mentre la costruisce con il cliente. E il dealer ha il controllo totale dei margini.</p>
+        <p><strong>Cross-selling e upselling diventano automatici.</strong> Il simulatore guida il venditore a proporre finanziamento, polizza, garanzia, antifurto e mobilit&agrave; in modo naturale durante la trattativa &mdash; non come un'aggiunta forzata, ma come parte integrante della proposta. Con la mia formazione dedicata e questo strumento, le concessionarie che seguo hanno visto <strong>crescere i margini di oltre il 50%</strong> in pochi mesi. Le provvigioni vengono calcolate in tempo reale, sia per il venditore che per il dealer. Nessuna sorpresa a fine mese: ognuno sa esattamente quanto guadagna su ogni operazione mentre la costruisce con il cliente.</p>
       </div>
       <p>Al termine della simulazione, il sistema genera automaticamente il <strong>contratto di vendita</strong>, il <strong>riepilogo globale per l'amministrazione</strong>, la <strong>scheda di permuta</strong> e la <strong>raccolta dati per il caricamento della pratica alla finanziaria</strong>. Zero data entry, zero errori, zero tempo perso.</p>
       <div class="svc-features">
@@ -427,7 +427,7 @@ section{padding:100px 32px}
         <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></div><div><h4>Documenti generati in automatico</h4><p>Contratto, riepilogo, permuta e raccolta dati finanziaria con un click</p></div></div>
         <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><h4>Multi-ruolo: Admin, Dealer, Venditore</h4><p>Ogni ruolo vede solo ci&ograve; che gli compete &mdash; provvigioni incluse</p></div></div>
       </div>
-      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri il Simulatore &rarr;</a></div>
+      </div>
     </div>
     <div>
       <div class="svc-gallery cols-1">
@@ -436,6 +436,7 @@ section{padding:100px 32px}
       </div>
     </div>
   </div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri il Simulatore &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 2. STOCK PERFORMANCE INDEX ═══ -->
@@ -457,18 +458,18 @@ section{padding:100px 32px}
         <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div><h4>Diagnosi e azioni suggerite</h4><p>Cosa fare concretamente per migliorare ogni annuncio</p></div></div>
         <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h4>Export Excel per il team</h4><p>Scarica l'analisi completa e condividila con la tua forza vendita</p></div></div>
       </div>
-      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri lo SPI &rarr;</a></div>
+      </div>
     </div>
     <div>
       <div class="svc-gallery cols-1">
         <div class="svc-screen" onclick="openLightbox(this)"><img src="SPI1.png" alt="SPI Dashboard"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Dashboard: analisi dello stock, score medio e priorit&agrave; operative</div></div>
-        <div class="svc-screen" onclick="openLightbox(this)"><img src="SPI2.png" alt="SPI Dettaglio"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Dettaglio vetture con score, diagnosi e suggerimenti operativi</div></div>
       </div>
       <div class="svc-gallery cols-1" style="margin-top:16px">
         <div class="svc-screen" onclick="openLightbox(this)"><img src="SPI3.png" alt="SPI A rischio"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Filtro &ldquo;A rischio&rdquo;: vetture che richiedono intervento urgente</div></div>
       </div>
     </div>
   </div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri lo SPI &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 3. AMI ═══ -->
@@ -490,15 +491,15 @@ section{padding:100px 32px}
         <div class="svc-feat"><div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><h4>10+ KPI con benchmark di mercato</h4><p>Margine ferro, servizi, penetrazione, giacenza, rotazione, efficienza</p></div></div>
         <div class="svc-feat"><div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h4>Classifica e monitoraggio mensile</h4><p>Nazionale, regionale, provinciale &mdash; traccia il tuo avanzamento nel tempo</p></div></div>
       </div>
-      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri l'AMI &rarr;</a></div>
+      </div>
     </div>
     <div>
       <div class="svc-gallery cols-1">
         <div class="svc-screen" onclick="openLightbox(this)"><img src="AMI1.png" alt="AMI Score"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Score AMI con dettaglio per area e classifica nazionale</div></div>
-        <div class="svc-screen" onclick="openLightbox(this)"><img src="AMI2.png" alt="AMI KPI"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Dettaglio KPI, confronto provinciale/regionale e diagnosi direzionale</div></div>
       </div>
     </div>
   </div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri l'AMI &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 4. RP ═══ -->
@@ -520,18 +521,16 @@ section{padding:100px 32px}
         <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><h4>Analisi personalizzata, non generica</h4><p>Considerazioni professionali tarate sulle caratteristiche uniche del mezzo</p></div></div>
         <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div><div><h4>Export Word pronto per il cliente</h4><p>File .docx professionale per email o WhatsApp, con simulazione finanziaria opzionale</p></div></div>
       </div>
-      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri le RP &rarr;</a></div>
+      </div>
     </div>
     <div>
       <div class="svc-gallery cols-1">
         <div class="svc-screen" onclick="openLightbox(this)"><img src="RP1.png" alt="RP Input"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Inserimento: link annuncio, testo e simulazione finanziaria opzionale</div></div>
         <div class="svc-screen" onclick="openLightbox(this)"><img src="RP2.png" alt="RP Output"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Scheda vettura con dati, optional e accessori che aumentano il valore</div></div>
       </div>
-      <div class="svc-gallery cols-1" style="margin-top:16px">
-        <div class="svc-screen" onclick="openLightbox(this)"><img src="RP3.png" alt="RP Considerazioni"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Considerazioni professionali personalizzate e accessori di valore</div></div>
-      </div>
     </div>
   </div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri le RP &rarr;</a></div>
 </div></div>
 
 <!-- ═══ 5. CRUSCOTTO ISTANTANEO ═══ -->
@@ -553,7 +552,7 @@ section{padding:100px 32px}
         <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div><div><h4>Import automatico da contratti</h4><p>Allega il riepilogo globale, zero data entry &mdash; i dati si caricano da soli</p></div></div>
         <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h4>Filtri per marca, canale, venditore e periodo</h4><p>Ogni dato &egrave; incrociabile per analisi granulari in tempo reale</p></div></div>
       </div>
-      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri il Cruscotto &rarr;</a></div>
+      </div>
     </div>
     <div>
       <div class="svc-gallery cols-2">
@@ -566,6 +565,7 @@ section{padding:100px 32px}
       </div>
     </div>
   </div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary btn-lg">Scopri il Cruscotto &rarr;</a></div>
 </div></div>
 
 <!-- ═══ PERSONAL CAR SHOPPER ═══ -->
@@ -593,20 +593,20 @@ section{padding:100px 32px}
       </div>
     </div>
     <div class="private-videos">
-      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
-        <img src="yt-consegna.jpg" alt="Consegna Premium">
+      <div class="private-video" onclick="window.open('https://youtu.be/94I3NJHM2p8','_blank')">
+        <img src="Copertina1.jpg" alt="Consegna Premium">
         <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
       </div>
-      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
-        <img src="yt-decarli.jpg" alt="Leonardo Decarli">
+      <div class="private-video" onclick="window.open('https://youtu.be/gsj_iXJ9deY','_blank')">
+        <img src="Copertina2.jpg" alt="Leonardo Decarli">
         <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
       </div>
-      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
-        <img src="yt-vr.jpg" alt="Realta Virtuale">
+      <div class="private-video" onclick="window.open('https://youtu.be/KWLHZgO_H1I','_blank')">
+        <img src="Copertina3.jpg" alt="Dalla Realta Virtuale all Auto dei Sogni">
         <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
       </div>
-      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
-        <img src="yt-podcast.jpg" alt="Podcast Innovario">
+      <div class="private-video" onclick="window.open('https://youtu.be/16TtjzAyAZA','_blank')">
+        <img src="Copertina4.jpg" alt="Podcast Innovario">
         <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
       </div>
     </div>
@@ -633,7 +633,7 @@ section{padding:100px 32px}
       <div class="about-highlights">
         <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><h5>25+ anni di esperienza</h5><p>Nel settore automotive</p></div></div>
         <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div><h5>1.000+ trattative</h5><p>Gestite con successo</p></div></div>
-        <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><h5>Alex 1st Class</h5><p>Format proprietario</p></div></div>
+        <div class="about-highlight"><div class="about-highlight-icon" style="background:rgba(255,0,0,0.08);color:#e00"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><div><h5>Alex 1st Class</h5><p>Format proprietario</p></div></div>
         <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><h5>Stratega UVP</h5><p>Per imprese e professionisti</p></div></div>
       </div>
     </div>
@@ -675,6 +675,14 @@ section{padding:100px 32px}
         <div class="faq-q">Quanto costa il servizio e su che auto lavori?</div>
         <div class="faq-a"><p>Il costo del servizio varia in base alla vettura e alla complessit&agrave; della ricerca. Lavoro prevalentemente sul segmento premium europeo &mdash; Audi, BMW, Mercedes-Benz, Porsche &mdash; sia nuovo che usato recente, con ricerca su tutto il mercato europeo. Nella call conoscitiva ti spiego tutto in trasparenza, senza impegno.</p></div>
       </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Posso vedere le consegne che hai gi&agrave; fatto?</div>
+        <div class="faq-a"><p>Certo! Sul canale YouTube Alex 1st Class trovi i video di consegne reali: ogni episodio racconta la storia del cliente, il percorso di ricerca e il momento della consegna a domicilio. Sono la migliore testimonianza di come funziona il servizio &mdash; niente di costruito, solo esperienze vere.</p></div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Lavori solo in Veneto o in tutta Italia?</div>
+        <div class="faq-a"><p>Lavoro in tutta Italia. La call conoscitiva avviene online, la ricerca &egrave; su tutto il mercato europeo e la consegna arriva direttamente da te &mdash; ovunque tu sia. Ho consegnato vetture dal Trentino alla Sicilia. La distanza non &egrave; un limite, &egrave; parte dell'esperienza.</p></div>
+      </div>
     </div>
   </div>
 </div></section>
@@ -690,20 +698,20 @@ section{padding:100px 32px}
     <a href="https://dealersuite.alessandrotasso.it" class="btn btn-outline">Accedi a Dealer Suite &rarr;</a>
   </div>
   <div class="cta-info">
-    <div class="cta-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@alessandrotasso.it</div>
+    <div class="cta-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfd6d1d9d0ffded3daccccded1dbcdd0cbdeccccd091d6cb">[email&#160;protected]</a></div>
     <div class="cta-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Padova, Italia</div>
   </div>
   <div class="social-links">
     <a href="https://www.linkedin.com/in/alessandrotasso/" target="_blank" class="social-link" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="social-link" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-    <a href="mailto:info@alessandrotasso.it" class="social-link" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+    <a href="/cdn-cgi/l/email-protection#41282f272e01202d243232202f25332e352032322e6f2835" class="social-link" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
   </div>
 </div></section>
 
 <!-- FOOTER -->
 <footer class="footer"><div class="footer-inner">
   <div class="footer-left">
-    <img src="logo-white.png" alt="AT" class="footer-logo-img">
+    <img src="LogoAlessandroTasso White.png" alt="AT" class="footer-logo-img">
     <span class="footer-copy">&copy; 2026 Alessandro Tasso. Tutti i diritti riservati.</span>
   </div>
   <div class="footer-links">
@@ -719,19 +727,9 @@ section{padding:100px 32px}
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function openLightbox(el){
   var img=el.querySelector('img');
   document.getElementById('lightbox-img').src=img.src;
   document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeLightbox(){
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
-</script>
-
-</body>
-</html>
+  do
