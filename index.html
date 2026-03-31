@@ -56,8 +56,9 @@ img{max-width:100%;height:auto}
 /* Who are you buttons */
 .hero-who{display:flex;gap:16px;flex-wrap:wrap}
 .hero-who-btn{display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.3s;border:2px solid;flex:1;min-width:220px;justify-content:center}
-.hero-who-btn.dealer{background:rgba(26,138,154,0.12);border-color:rgba(26,138,154,0.3);color:var(--teal)}
-.hero-who-btn.dealer:hover{background:rgba(26,138,154,0.2);border-color:var(--teal);transform:translateY(-2px)}
+.hero-who-btn.dealer{background:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.9);color:var(--navy)}
+.hero-who-btn.dealer:hover{background:rgba(255,255,255,0.95);border-color:var(--white);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,255,255,0.2)}
+.hero-who-btn.dealer small{color:var(--navy);opacity:0.6}
 .hero-who-btn.privato{background:rgba(200,168,78,0.12);border-color:rgba(200,168,78,0.3);color:var(--gold)}
 .hero-who-btn.privato:hover{background:rgba(200,168,78,0.2);border-color:var(--gold);transform:translateY(-2px)}
 .hero-who-btn svg{width:22px;height:22px}
@@ -120,6 +121,8 @@ section{padding:100px 32px}
 .ds-intro-card-desc{font-size:10px;color:rgba(255,255,255,0.4);line-height:1.4}
 .ds-intro-cta{margin-top:48px;text-align:center}
 .ds-intro-cta .btn{margin:0 8px 8px 0}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 0 0 rgba(200,168,78,0.4)}50%{box-shadow:0 0 20px 6px rgba(200,168,78,0.25)}}
+.btn-animated{animation:pulse-glow 2.5s ease infinite}
 .ds-intro-bonus{margin-top:20px;text-align:center;font-size:14px;color:var(--gold);font-weight:600}
 .ds-intro-bonus span{background:rgba(200,168,78,0.15);padding:6px 16px;border-radius:8px;border:1px solid rgba(200,168,78,0.25)}
 
@@ -127,7 +130,7 @@ section{padding:100px 32px}
 .svc{padding:100px 32px;position:relative}
 .svc-alt{background:var(--gray-50)}
 .svc-inner{max-width:1200px;margin:0 auto}
-.svc-header{margin-bottom:48px;max-width:800px}
+.svc-header{margin-bottom:48px}
 .svc-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;font-weight:800;font-size:16px;margin-bottom:16px}
 .svc-num.sim{background:rgba(200,168,78,0.12);color:var(--gold)}
 .svc-num.spi{background:rgba(26,138,154,0.1);color:var(--teal)}
@@ -135,12 +138,12 @@ section{padding:100px 32px}
 .svc-num.rp{background:rgba(200,168,78,0.12);color:var(--gold)}
 .svc-num.cru{background:rgba(26,138,154,0.1);color:var(--teal)}
 .svc h2{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--navy);letter-spacing:-0.8px;margin-bottom:16px;line-height:1.15}
-.svc-lead{font-size:17px;color:var(--gray-600);line-height:1.75;max-width:800px}
+.svc-lead{font-size:17px;color:var(--gray-600);line-height:1.75}
 
 /* Service content grid - alternating */
 .svc-content{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:start}
-.svc-content.reverse{direction:rtl}
-.svc-content.reverse>*{direction:ltr}
+.svc-content.reverse>:first-child{order:2}
+.svc-content.reverse>:last-child{order:1}
 .svc-text p{font-size:15px;color:var(--gray-600);line-height:1.75;margin-bottom:16px}
 .svc-highlight{background:var(--navy);color:var(--white);border-radius:var(--radius-lg);padding:28px;margin:24px 0}
 .svc-highlight p{color:rgba(255,255,255,0.75);margin:0;font-size:14px;line-height:1.7}
@@ -276,7 +279,8 @@ section{padding:100px 32px}
   .areas-grid{grid-template-columns:1fr 1fr}
   .ds-intro-grid{grid-template-columns:repeat(3,1fr)}
   .svc-content{grid-template-columns:1fr}
-  .svc-content.reverse{direction:ltr}
+  .svc-content.reverse>:first-child{order:0}
+  .svc-content.reverse>:last-child{order:0}
   .private-grid{grid-template-columns:1fr}
   .faq-grid{grid-template-columns:1fr}
 }
@@ -389,7 +393,7 @@ section{padding:100px 32px}
 <section class="ds-intro" id="dealer-suite"><div class="section-inner">
   <div class="section-label">Dealer Suite</div>
   <h2 class="section-title">5 strumenti, una piattaforma.<br>Tutto ci&ograve; che serve al tuo salone.</h2>
-  <p class="section-sub">Dealer Suite &egrave; la piattaforma riservata ai concessionari che vogliono dati, report e controllo in un'unica interfaccia. Che tu sia un salone multimarca da 30 vetture o una concessionaria strutturata da 300, questi strumenti cambiano i numeri dal giorno dopo.</p>
+  <p class="section-sub" style="max-width:100%">Dealer Suite &egrave; il portale operativo che ho costruito dopo 25 anni di vendita in salone. Non &egrave; un gestionale teorico: sono 5 tool pratici, pensati da un venditore per i venditori, che ti aiutano concretamente a <strong style="color:var(--gold)">sbloccare lo stock fermo</strong>, <strong style="color:var(--gold)">aumentare la penetrazione dei servizi finanziari e assicurativi</strong>, <strong style="color:var(--gold)">alzare i margini su ogni trattativa</strong> e <strong style="color:var(--gold)">portare la qualit&agrave; della relazione con il cliente finale a un livello superiore</strong>. Che tu sia un salone multimarca da 30 vetture o una concessionaria strutturata da 300, questi strumenti cambiano i numeri dal giorno dopo.</p>
   <div class="ds-intro-grid">
     <a href="#svc-sim" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--gold)">SIM</div><div class="ds-intro-card-name">Simulatore Multiservizi</div><div class="ds-intro-card-desc">Tutti i simulatori in uno</div></a>
     <a href="#svc-spi" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--teal)">SPI</div><div class="ds-intro-card-name">Stock Performance Index</div><div class="ds-intro-card-desc">Analisi stock in 1 minuto</div></a>
@@ -398,7 +402,7 @@ section{padding:100px 32px}
     <a href="#svc-cru" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--teal)">CRI</div><div class="ds-intro-card-name">Cruscotto Istantaneo</div><div class="ds-intro-card-desc">KPI aziendali in tempo reale</div></a>
   </div>
   <div class="ds-intro-cta">
-    <a href="https://dealersuite.alessandrotasso.it" class="btn btn-gold">Accedi a Dealer Suite &rarr;</a>
+    <a href="https://dealersuite.alessandrotasso.it" class="btn btn-gold btn-lg btn-animated">Accedi a Dealer Suite &rarr;</a>
   </div>
   <div class="ds-intro-bonus"><span>&#127873; Iscriviti ora e ricevi 100 crediti omaggio per testare tutti i servizi</span></div>
 </div></section>
@@ -428,7 +432,6 @@ section{padding:100px 32px}
     <div>
       <div class="svc-gallery cols-1">
         <div class="svc-screen" onclick="openLightbox(this)"><img src="Simulatore1.png" alt="Simulatore"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Interfaccia principale: anagrafica, finanziamento, assicurazioni e garanzie in un'unica vista</div></div>
-        <div class="svc-screen" onclick="openLightbox(this)"><img src="Simulatore2.png" alt="Riepilogo"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Riepilogo commerciale generato automaticamente con tutti i dettagli</div></div>
       </div>
     </div>
   </div>
@@ -711,7 +714,7 @@ section{padding:100px 32px}
     <span class="footer-copy">&copy; 2026 Alessandro Tasso. Tutti i diritti riservati.</span>
   </div>
   <div class="footer-links">
-    <a href="mailto:info@alessandrotasso.it">info@alessandrotasso.it</a>
+    <a href="/cdn-cgi/l/email-protection#670e09010827060b02141406090315081306141408490e13"><span class="__cf_email__" data-cfemail="98f1f6fef7d8f9f4fdebebf9f6fceaf7ecf9ebebf7b6f1ec">[email&#160;protected]</span></a>
     <a href="#">Privacy Policy</a>
     <a href="#">Termini di Servizio</a>
     <a href="https://dealersuite.alessandrotasso.it">Dealer Suite</a>
@@ -724,9 +727,4 @@ section{padding:100px 32px}
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function openLightbox(el){
-  var img=el.querySelector('img');
-  document.getElementById('lightbox-img').src=img.src;
-  document.getElementById('lightbox').classList.add('open');
-  do
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scrip
