@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alessandro Tasso — Automotive Profit Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f2440;
+  --navy-light: #1a3558;
+  --navy-mid: #162d4a;
+  --teal: #1a8a9a;
+  --teal-hover: #15707e;
+  --gold: #c8a84e;
+  --gold-light: #d4b966;
+  --white: #ffffff;
+  --gray-50: #f8f9fb;
+  --gray-100: #f0f2f5;
+  --gray-200: #e2e5ea;
+  --gray-300: #c8cdd5;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --font: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(15,36,64,0.06);
+  --shadow-md: 0 4px 16px rgba(15,36,64,0.08);
+  --shadow-lg: 0 8px 32px rgba(15,36,64,0.12);
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  color: var(--gray-800);
+  line-height: 1.6;
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(15,36,64,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between; height: 72px;
+}
+.nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo-img { height: 38px; width: auto; }
+.nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13.5px;
+  font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+.nav-cta {
+  background: var(--gold) !important; color: var(--navy) !important;
+  font-weight: 600 !important; padding: 8px 20px !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; }
+.nav-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.15); margin: 0 8px; }
+.nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-mobile-toggle svg { width: 24px; height: 24px; stroke: var(--white); }
+
+/* HERO */
+.hero {
+  position: relative; min-height: 100vh; display: flex;
+  align-items: center; overflow: hidden; padding-top: 72px;
+}
+.hero-bg-image {
+  position: absolute; inset: 0;
+  background: url('photo-horizontal.jpeg') center center / cover no-repeat;
+}
+.hero-bg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(15,36,64,0.92) 0%, rgba(15,36,64,0.75) 50%, rgba(15,36,64,0.85) 100%);
+}
+.hero-pattern {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-inner {
+  position: relative; max-width: 1200px; margin: 0 auto; padding: 80px 32px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(200,168,78,0.12); border: 1px solid rgba(200,168,78,0.25);
+  border-radius: 100px; padding: 6px 16px 6px 8px;
+  font-size: 12px; font-weight: 600; color: var(--gold);
+  letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 28px;
+}
+.hero-badge-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+  animation: pulse-dot 2s ease infinite;
+}
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero h1 {
+  font-size: clamp(36px, 4.5vw, 54px); font-weight: 800; color: var(--white);
+  line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 24px;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub {
+  font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.7;
+  margin-bottom: 40px; max-width: 480px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 28px; border-radius: 10px; font-family: var(--font);
+  font-size: 14.5px; font-weight: 600; text-decoration: none;
+  transition: all 0.25s ease; cursor: pointer; border: none;
+}
+.btn-primary { background: var(--teal); color: var(--white); }
+.btn-primary:hover { background: var(--teal-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(26,138,154,0.3); }
+.btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.2); }
+.btn-outline:hover { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(200,168,78,0.3); }
+.btn-icon { width: 18px; height: 18px; }
+
+/* Hero card */
+.hero-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-xl); padding: 40px; backdrop-filter: blur(10px);
+}
+.hero-card-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--gold); font-weight: 600; margin-bottom: 24px;
+}
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hero-stat {
+  text-align: center; padding: 20px; background: rgba(255,255,255,0.04);
+  border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.06);
+}
+.hero-stat-number { font-size: 32px; font-weight: 800; color: var(--white); letter-spacing: -1px; margin-bottom: 4px; }
+.hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 500; }
+.hero-stat-number.gold { color: var(--gold); }
+.hero-stat-number.teal { color: var(--teal); }
+.hero-stat-badge {
+  display: inline-flex; align-items: center; gap: 4px; margin-top: 6px;
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+  color: var(--gold); background: rgba(200,168,78,0.15); padding: 3px 8px; border-radius: 4px;
+}
+
+/* STATS BAR */
+.stats-bar { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 48px 32px; }
+.stats-bar-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.stat-item { text-align: center; padding: 24px 16px; border-radius: var(--radius); border: 1px solid var(--gray-200); }
+.stat-number { font-size: 36px; font-weight: 800; color: var(--navy); letter-spacing: -1px; margin-bottom: 6px; }
+.stat-number.accent { color: var(--teal); }
+.stat-label { font-size: 13px; color: var(--gray-500); font-weight: 500; line-height: 1.4; }
+
+/* SECTIONS */
+section { padding: 100px 32px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(26,138,154,0.08); color: var(--teal);
+  font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 100px; margin-bottom: 20px;
+}
+.section-title {
+  font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: var(--navy);
+  letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px;
+}
+.section-sub { font-size: 16px; color: var(--gray-500); max-width: 560px; line-height: 1.7; }
+
+/* COSA FACCIO */
+.areas { background: var(--gray-50); }
+.areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.area-card {
+  background: var(--white); border-radius: var(--radius-lg); padding: 36px 32px;
+  border: 1px solid var(--gray-200); transition: all 0.3s; position: relative; overflow: hidden;
+}
+.area-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.area-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; opacity: 0; transition: opacity 0.3s; }
+.area-card:hover::before { opacity: 1; }
+.area-card:nth-child(1)::before { background: var(--teal); }
+.area-card:nth-child(2)::before { background: var(--gold); }
+.area-card:nth-child(3)::before { background: var(--navy); }
+.area-icon {
+  width: 52px; height: 52px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+}
+.area-icon.profit { background: rgba(26,138,154,0.1); color: var(--teal); }
+.area-icon.pcs { background: rgba(200,168,78,0.12); color: var(--gold); }
+.area-icon.video { background: rgba(15,36,64,0.08); color: var(--navy); }
+.area-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.area-card p { font-size: 14px; color: var(--gray-500); line-height: 1.65; margin-bottom: 20px; }
+.area-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.area-tag {
+  font-size: 11px; font-weight: 600; color: var(--gray-500);
+  background: var(--gray-100); padding: 4px 10px; border-radius: 6px;
+}
+
+/* DEALER SUITE */
+.dealer-suite { background: var(--navy); position: relative; overflow: hidden; }
+.dealer-suite .section-label { background: rgba(200,168,78,0.12); color: var(--gold); }
+.dealer-suite .section-title { color: var(--white); }
+.dealer-suite .section-sub { color: rgba(255,255,255,0.55); }
+.ds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 56px; align-items: center; }
+.ds-features { display: flex; flex-direction: column; gap: 20px; }
+.ds-feature {
+  display: flex; gap: 16px; padding: 20px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius); transition: all 0.2s;
+}
+.ds-feature:hover { background: rgba(255,255,255,0.06); border-color: rgba(200,168,78,0.2); }
+.ds-feature-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(200,168,78,0.12); color: var(--gold);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.ds-feature h4 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.ds-feature p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+.ds-preview {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-xl); padding: 32px;
+}
+.ds-preview-header {
+  display: flex; align-items: center; gap: 12px;
+  padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 24px;
+}
+.ds-preview-dot { width: 10px; height: 10px; border-radius: 50%; }
+.ds-preview-dot:nth-child(1) { background: #ff5f57; }
+.ds-preview-dot:nth-child(2) { background: #febc2e; }
+.ds-preview-dot:nth-child(3) { background: #28c840; }
+.ds-preview-url { flex: 1; text-align: center; font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 500; }
+.ds-preview-content { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ds-mini-card {
+  background: rgba(255,255,255,0.05); border-radius: 10px; padding: 20px;
+  text-align: center; border: 1px solid rgba(255,255,255,0.06);
+}
+.ds-mini-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.35); margin-bottom: 8px; font-weight: 600; }
+.ds-mini-card .value { font-size: 24px; font-weight: 800; color: var(--white); }
+.ds-mini-card .value.gold { color: var(--gold); }
+.ds-mini-card .value.teal { color: var(--teal); }
+.ds-cta { margin-top: 40px; display: flex; gap: 14px; align-items: center; }
+
+/* CHI SONO */
+.about { background: var(--gray-50); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; margin-top: 56px; align-items: start; }
+.about-photo {
+  width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-xl);
+  overflow: hidden; position: relative;
+}
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-photo-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 32px;
+  background: linear-gradient(transparent, rgba(15,36,64,0.85));
+}
+.about-photo-overlay h4 { color: var(--white); font-size: 20px; font-weight: 700; }
+.about-photo-overlay p { color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 4px; }
+.about-content h3 { font-size: 28px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 20px; line-height: 1.2; }
+.about-content p { font-size: 15px; color: var(--gray-600); line-height: 1.75; margin-bottom: 16px; }
+.about-quote {
+  border-left: 3px solid var(--gold); padding-left: 20px; margin: 28px 0;
+  font-style: italic; color: var(--navy); font-size: 16px; font-weight: 500; line-height: 1.6;
+}
+.about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.about-highlight {
+  display: flex; align-items: flex-start; gap: 12px; padding: 16px;
+  background: var(--white); border-radius: var(--radius); border: 1px solid var(--gray-200);
+}
+.about-highlight-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(26,138,154,0.1); color: var(--teal);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.about-highlight h5 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+.about-highlight p { font-size: 12px; color: var(--gray-500); margin: 0; line-height: 1.4; }
+
+/* COME LAVORO */
+.process { background: var(--white); }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+.process-step {
+  position: relative; padding: 32px 24px; background: var(--gray-50);
+  border-radius: var(--radius-lg); border: 1px solid var(--gray-200);
+  text-align: center; transition: all 0.3s;
+}
+.process-step:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.step-num {
+  width: 36px; height: 36px; border-radius: 10px; background: var(--teal);
+  color: var(--white); display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; margin-bottom: 16px;
+}
+.process-step h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.process-step p { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+.process-step:not(:last-child)::after {
+  content: '\2192'; position: absolute; right: -18px; top: 44px;
+  color: var(--gray-300); font-size: 18px; z-index: 1;
+}
+
+/* YOUTUBE */
+.youtube-section { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+.youtube-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 48px; align-items: center; }
+.youtube-content h3 { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+.youtube-content p { font-size: 15px; color: var(--gray-600); line-height: 1.7; margin-bottom: 24px; }
+.youtube-preview {
+  background: var(--white); border-radius: var(--radius-xl); padding: 24px;
+  border: 1px solid var(--gray-200); text-align: center;
+}
+.youtube-thumbnail {
+  width: 100%; aspect-ratio: 16/9; border-radius: var(--radius);
+  overflow: hidden; position: relative; background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+}
+.youtube-thumbnail img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+.youtube-play {
+  position: absolute; width: 64px; height: 64px; background: rgba(255,0,0,0.9);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+}
+.youtube-play svg { width: 24px; height: 24px; fill: white; margin-left: 3px; }
+.youtube-channel-name { margin-top: 16px; font-size: 14px; font-weight: 600; color: var(--navy); }
+.youtube-channel-sub { font-size: 12px; color: var(--gray-500); margin-top: 4px; }
+
+/* CTA */
+.cta-section { background: var(--navy); text-align: center; position: relative; overflow: hidden; }
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 120%, rgba(200,168,78,0.1) 0%, transparent 60%);
+}
+.cta-inner { position: relative; max-width: 680px; margin: 0 auto; }
+.cta-section h2 {
+  font-size: clamp(28px, 3.5vw, 40px); font-weight: 800; color: var(--white);
+  letter-spacing: -1px; margin-bottom: 16px; line-height: 1.15;
+}
+.cta-section p { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 36px; }
+.cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.cta-info { margin-top: 48px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.cta-info-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 13px; font-weight: 500; }
+.cta-info-item svg { width: 16px; height: 16px; opacity: 0.6; }
+.social-links { display: flex; justify-content: center; gap: 16px; margin-top: 32px; }
+.social-link {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none; transition: all 0.2s;
+}
+.social-link:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.social-link svg { width: 18px; height: 18px; }
+
+/* FOOTER */
+.footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 32px 32px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.footer-left { display: flex; align-items: center; gap: 12px; }
+.footer-logo-img { height: 28px; width: auto; opacity: 0.6; }
+.footer-copy { color: rgba(255,255,255,0.35); font-size: 13px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+.hero-inner > * { animation: fadeUp 0.8s ease-out both; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.2s; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .ds-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .areas-grid { grid-template-columns: 1fr 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-step:not(:last-child)::after { display: none; }
+  .youtube-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: block; }
+  section { padding: 64px 20px; }
+  .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+  .areas-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .hero-inner { padding: 48px 20px; }
+  .about-highlights { grid-template-columns: 1fr; }
+  .cta-info { flex-direction: column; gap: 16px; align-items: center; }
+  .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+  .ds-preview-content { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="logo-white.png" alt="Alessandro Tasso" class="nav-logo-img">
+    </a>
+    <button class="nav-mobile-toggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#cosa-faccio">Cosa Faccio</a></li>
+      <li><a href="#dealer-suite">Dealer Suite</a></li>
+      <li><a href="#chi-sono">Chi Sono</a></li>
+      <li><a href="#come-lavoro">Come Lavoro</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+      <div class="nav-divider"></div>
+      <li><a href="https://dealersuite.alessandrotasso.it" class="nav-cta">Accedi al Portale</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-image"></div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Automotive Profit Manager
+      </div>
+      <h1>Vendi di pi&ugrave;,<br>meglio e in modo <span>differenziante</span></h1>
+      <p class="hero-sub">
+        Affianco concessionarie e imprenditori dell'auto per migliorare margini, 
+        processi e posizionamento. Con strumenti digitali, consulenza strategica 
+        e una domanda: &ldquo;Cosa ti rende davvero unico?&rdquo;
+      </p>
+      <div class="hero-actions">
+        <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Prenota una Call Gratuita
+        </a>
+        <a href="#cosa-faccio" class="btn btn-outline">
+          Scopri i Servizi &rarr;
+        </a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">Piattaforma Dealer Suite</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number teal">SPI</div>
+          <div class="hero-stat-label">Stock Performance Index</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number gold">RP</div>
+          <div class="hero-stat-label">Relazioni Professionali</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">AMI</div>
+          <div class="hero-stat-label">Automotive Margin Index</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number teal" style="font-size:22px;">SIM</div>
+          <div class="hero-stat-label">Simulatore Multiservizi</div>
+          <div class="hero-stat-badge">In Corso</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number accent">25+</div>
+      <div class="stat-label">Anni di esperienza<br>nel settore auto</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">1.000+</div>
+      <div class="stat-label">Trattative gestite<br>con successo</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number accent">20+</div>
+      <div class="stat-label">Concessionarie<br>seguite attivamente</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Aree di specializzazione<br>nel settore</div>
+    </div>
+  </div>
+</div>
+
+<!-- COSA FACCIO -->
+<section class="areas" id="cosa-faccio">
+  <div class="section-inner">
+    <div class="section-label">Cosa faccio</div>
+    <h2 class="section-title">Tre aree, un unico obiettivo:<br>farti vendere meglio</h2>
+    <p class="section-sub">Consulenza, tecnologia e comunicazione al servizio di chi opera nel mondo dell'auto.</p>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="area-icon profit">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>Automotive Profit Manager</h3>
+        <p>Affianco saloni e concessionarie per migliorare margini e condizioni finanziarie, gestire selezione e analisi attitudinale del personale, ottimizzare marketing, strumenti digitali e processi aziendali.</p>
+        <div class="area-tags">
+          <span class="area-tag">Margini</span>
+          <span class="area-tag">Processi</span>
+          <span class="area-tag">Personale</span>
+          <span class="area-tag">Marketing</span>
+        </div>
+      </div>
+      <div class="area-card">
+        <div class="area-icon pcs">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><path d="M5 12h14"/></svg>
+        </div>
+        <h3>Personal Car Shopper</h3>
+        <p>Aiuto privati e imprenditori a trovare l'auto perfetta per le loro esigenze, con consulenza personalizzata, ricerca sul mercato europeo e consegna a domicilio.</p>
+        <div class="area-tags">
+          <span class="area-tag">Consulenza</span>
+          <span class="area-tag">Import</span>
+          <span class="area-tag">Premium</span>
+        </div>
+      </div>
+      <div class="area-card">
+        <div class="area-icon video">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <h3>Posizionamento &amp; Video</h3>
+        <p>Con il format &ldquo;Una Giornata in&hellip;&rdquo; creo piani strategici che uniscono UVP, docufilm, podcast, pillole social e copertura mediatica. Non &egrave; un video: &egrave; una comunicazione che lascia il segno.</p>
+        <div class="area-tags">
+          <span class="area-tag">Docufilm</span>
+          <span class="area-tag">UVP</span>
+          <span class="area-tag">Social</span>
+          <span class="area-tag">Podcast</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEALER SUITE -->
+<section class="dealer-suite" id="dealer-suite">
+  <div class="section-inner">
+    <div class="section-label">Portale dedicato</div>
+    <h2 class="section-title">Dealer Suite</h2>
+    <p class="section-sub">La piattaforma riservata ai concessionari per accedere a tutti gli strumenti di analisi e gestione in un'unica interfaccia.</p>
+    <div class="ds-grid">
+      <div>
+        <div class="ds-features">
+          <div class="ds-feature">
+            <div class="ds-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21H3V3"/><path d="M21 7l-5 5-4-4-6 6"/></svg>
+            </div>
+            <div>
+              <h4>Stock Performance Index</h4>
+              <p>Analisi delle performance del tuo stock veicoli: giacenze, rotazione, redditivit&agrave;.</p>
+            </div>
+          </div>
+          <div class="ds-feature">
+            <div class="ds-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+            </div>
+            <div>
+              <h4>Relazioni Professionali</h4>
+              <p>Report con simulazione finanziaria integrata per presentare ogni veicolo al cliente.</p>
+            </div>
+          </div>
+          <div class="ds-feature">
+            <div class="ds-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <h4>Automotive Margin Index</h4>
+              <p>Questionario per determinare i margini effettivi su ogni trattativa.</p>
+            </div>
+          </div>
+          <div class="ds-feature">
+            <div class="ds-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div>
+              <h4>Simulatore Multiservizi</h4>
+              <p>Simulatore finanziario multi-dealer con ruoli Admin, Dealer e Venditore. In sviluppo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ds-cta">
+          <a href="https://dealersuite.alessandrotasso.it" class="btn btn-gold">Accedi a Dealer Suite &rarr;</a>
+        </div>
+      </div>
+      <div class="ds-preview">
+        <div class="ds-preview-header">
+          <span class="ds-preview-dot"></span>
+          <span class="ds-preview-dot"></span>
+          <span class="ds-preview-dot"></span>
+          <span class="ds-preview-url">dealersuite.alessandrotasso.it</span>
+        </div>
+        <div class="ds-preview-content">
+          <div class="ds-mini-card">
+            <div class="label">Crediti disponibili</div>
+            <div class="value gold">248</div>
+          </div>
+          <div class="ds-mini-card">
+            <div class="label">Report generati</div>
+            <div class="value teal">37</div>
+          </div>
+          <div class="ds-mini-card">
+            <div class="label">Veicoli analizzati</div>
+            <div class="value">156</div>
+          </div>
+          <div class="ds-mini-card">
+            <div class="label">Margine medio</div>
+            <div class="value teal">8.2%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SONO -->
+<section class="about" id="chi-sono">
+  <div class="section-inner">
+    <div class="section-label">Chi sono</div>
+    <h2 class="section-title">Il percorso che mi ha reso<br>chi sono oggi</h2>
+    <div class="about-grid">
+      <div>
+        <div class="about-photo">
+          <img src="photo-bw.jpg" alt="Alessandro Tasso">
+          <div class="about-photo-overlay">
+            <h4>Alessandro Tasso</h4>
+            <p>Automotive Profit Manager</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <h3>Classe '81, padovano DOC.<br>Da oltre 25 anni nel mondo dell'auto.</h3>
+        <div class="about-quote">
+          &ldquo;Cosa ti rende davvero unico?&rdquo; &mdash; &Egrave; la domanda da cui parto sempre, con ogni azienda e ogni imprenditore che seguo.
+        </div>
+        <p>Ho vissuto esperienze che mi hanno reso fiero, ma nulla conta pi&ugrave; del percorso che mi ha portato a essere la persona che sono oggi. Un percorso fatto di sfide, intuizioni e tanta voglia di evolvere.</p>
+        <p>Oggi affianco una ventina di concessionarie &mdash; di brand e multimarca &mdash; nella crescita e nello sviluppo. Le aiuto a vendere di pi&ugrave;, meglio e in modo differenziante. Amo la chiarezza, la concretezza e l'originalit&agrave;.</p>
+        <p>Sono anche un nerd appassionato: sviluppo tool, automatizzo flussi, semplifico il lavoro delle aziende. E se serve raccontare, salgo sul palco o accendo una camera. Racconto storie che vendono.</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <div class="about-highlight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div><h5>25+ anni di esperienza</h5><p>Nel settore automotive</p></div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div><h5>1.000+ trattative</h5><p>Gestite con successo</p></div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div><h5>Alex 1st Class</h5><p>Format proprietario</p></div>
+          </div>
+          <div class="about-highlight">
+            <div class="about-highlight-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div><h5>Stratega UVP</h5><p>Per imprese e professionisti</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME LAVORO -->
+<section class="process" id="come-lavoro">
+  <div class="section-inner">
+    <div class="section-label">Il percorso</div>
+    <h2 class="section-title">Come lavoro</h2>
+    <p class="section-sub">Un approccio strutturato, dalla consulenza iniziale ai risultati misurabili.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Ascolto</h4>
+        <p>Ti ascolto per capire il tuo business, i tuoi punti di forza e le aree da migliorare.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>Analisi</h4>
+        <p>Analizzo margini, processi, personale e posizionamento per individuare le leve giuste.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>Strategia</h4>
+        <p>Definiamo insieme il piano d'azione con obiettivi chiari e strumenti concreti.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4>Risultati</h4>
+        <p>Ti affianco nell'esecuzione, monitoro le performance e ottimizziamo insieme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE -->
+<section class="youtube-section" id="youtube">
+  <div class="section-inner">
+    <div class="section-label">Contenuti video</div>
+    <h2 class="section-title">Una Giornata in&hellip;</h2>
+    <p class="section-sub">Il format video che racconta il mondo automotive da dentro. Docufilm, podcast e pillole per il posizionamento aziendale.</p>
+    <div class="youtube-grid">
+      <div class="youtube-content">
+        <h3>Storie che vendono, raccontate con visione</h3>
+        <p>Con &ldquo;Una Giornata in&hellip;&rdquo; entro nelle concessionarie e nelle aziende per raccontare la loro unicit&agrave; attraverso docufilm, podcast e contenuti social pensati per posizionare il brand e generare impatto mediatico reale.</p>
+        <p>Non &egrave; un semplice video: &egrave; un piano strategico di comunicazione che unisce UVP, storytelling e copertura mediatica nazionale.</p>
+        <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="btn btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Guarda il Canale YouTube
+        </a>
+      </div>
+      <div class="youtube-preview">
+        <div class="youtube-thumbnail">
+          <img src="photo-horizontal.jpeg" alt="Una Giornata in...">
+          <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="youtube-play">
+            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </a>
+        </div>
+        <div class="youtube-channel-name">Una Giornata in&hellip;</div>
+        <div class="youtube-channel-sub">Docufilm &bull; Podcast &bull; Automotive</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / BOOKING -->
+<section class="cta-section" id="contatti">
+  <div class="section-inner cta-inner">
+    <div class="section-label" style="background: rgba(200,168,78,0.12); color: var(--gold);">Parliamone</div>
+    <h2>Pronto a fare il salto<br>di qualit&agrave;?</h2>
+    <p>Prenota una consulenza gratuita: ti ascolto, analizzo la tua situazione e ti dico come posso aiutarti. Gratis, per cominciare. Con entusiasmo, visione e risultati.</p>
+    <div class="cta-buttons">
+      <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-gold">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Prenota una Call Gratuita
+      </a>
+      <a href="https://dealersuite.alessandrotasso.it" class="btn btn-outline">Accedi a Dealer Suite &rarr;</a>
+    </div>
+    <div class="cta-info">
+      <div class="cta-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@alessandrotasso.it
+      </div>
+      <div class="cta-info-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Padova, Italia
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/alessandrotasso/" target="_blank" class="social-link" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="social-link" title="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="mailto:info@alessandrotasso.it" class="social-link" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="logo-white.png" alt="AT" class="footer-logo-img">
+      <span class="footer-copy">&copy; 2026 Alessandro Tasso. Tutti i diritti riservati.</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Termini di Servizio</a>
+      <a href="https://dealersuite.alessandrotasso.it">Dealer Suite</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
