@@ -7,36 +7,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy: #0f2440;
-  --navy-light: #1a3558;
-  --navy-mid: #162d4a;
-  --teal: #1a8a9a;
-  --teal-hover: #15707e;
-  --gold: #c8a84e;
-  --gold-light: #d4b966;
-  --white: #ffffff;
-  --gray-50: #f8f9fb;
-  --gray-100: #f0f2f5;
-  --gray-200: #e2e5ea;
-  --gray-300: #c8cdd5;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-800: #1f2937;
-  --font: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  --shadow-md: 0 4px 16px rgba(15,36,64,0.08);
-  --shadow-lg: 0 8px 32px rgba(15,36,64,0.12);
-  --radius: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-}
+:root{--navy:#0f2440;--navy-light:#1a3558;--navy-mid:#162d4a;--teal:#1a8a9a;--teal-hover:#15707e;--gold:#c8a84e;--gold-light:#d4b966;--white:#ffffff;--gray-50:#f8f9fb;--gray-100:#f0f2f5;--gray-200:#e2e5ea;--gray-300:#c8cdd5;--gray-500:#6b7280;--gray-600:#4b5563;--gray-800:#1f2937;--font:'Plus Jakarta Sans',-apple-system,sans-serif;--shadow-md:0 4px 16px rgba(15,36,64,0.08);--shadow-lg:0 8px 32px rgba(15,36,64,0.12);--radius:12px;--radius-lg:16px;--radius-xl:20px}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--font);color:var(--gray-800);line-height:1.6;background:var(--white);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
 
 /* NAV */
 .nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,36,64,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px}
-.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-brand{display:flex;align-items:center;text-decoration:none}
 .nav-logo-img{height:38px;width:auto}
 .nav-links{display:flex;align-items:center;gap:8px;list-style:none}
 .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:8px;transition:all 0.2s}
@@ -46,20 +25,6 @@ body{font-family:var(--font);color:var(--gray-800);line-height:1.6;background:va
 .nav-divider{width:1px;height:24px;background:rgba(255,255,255,0.15);margin:0 8px}
 .nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .nav-mobile-toggle svg{width:24px;height:24px;stroke:var(--white)}
-
-/* HERO */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:72px}
-.hero-bg-image{position:absolute;inset:0;background:url('photo-horizontal.jpeg') center/cover no-repeat}
-.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,36,64,0.92) 0%,rgba(15,36,64,0.75) 50%,rgba(15,36,64,0.85) 100%)}
-.hero-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:60px 60px}
-.hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,168,78,0.12);border:1px solid rgba(200,168,78,0.25);border-radius:100px;padding:6px 16px 6px 8px;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:28px}
-.hero-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s ease infinite}
-@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.4}}
-.hero h1{font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--white);line-height:1.08;letter-spacing:-1.5px;margin-bottom:24px}
-.hero h1 span{color:var(--gold)}
-.hero-sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;max-width:480px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:10px;font-family:var(--font);font-size:14.5px;font-weight:600;text-decoration:none;transition:all 0.25s ease;cursor:pointer;border:none}
@@ -71,17 +36,42 @@ body{font-family:var(--font);color:var(--gray-800);line-height:1.6;background:va
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,168,78,0.3)}
 .btn-outline-dark{background:transparent;color:var(--navy);border:1.5px solid var(--gray-200)}
 .btn-outline-dark:hover{border-color:var(--navy);background:var(--gray-50)}
+.btn-lg{padding:18px 36px;font-size:16px;border-radius:12px}
 .btn-icon{width:18px;height:18px}
 
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:72px}
+.hero-bg-image{position:absolute;inset:0;background:url('photo-horizontal.jpeg') center/cover no-repeat}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,36,64,0.92) 0%,rgba(15,36,64,0.75) 50%,rgba(15,36,64,0.85) 100%)}
+.hero-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:60px 60px}
+.hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:80px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,168,78,0.12);border:1px solid rgba(200,168,78,0.25);border-radius:100px;padding:6px 16px 6px 8px;font-size:12px;font-weight:600;color:var(--gold);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:28px}
+.hero-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s ease infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--white);line-height:1.08;letter-spacing:-1.5px;margin-bottom:24px}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;max-width:480px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+
+/* Who are you buttons */
+.hero-who{display:flex;gap:16px;flex-wrap:wrap}
+.hero-who-btn{display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.3s;border:2px solid}
+.hero-who-btn.dealer{background:rgba(26,138,154,0.12);border-color:rgba(26,138,154,0.3);color:var(--teal)}
+.hero-who-btn.dealer:hover{background:rgba(26,138,154,0.2);border-color:var(--teal);transform:translateY(-2px)}
+.hero-who-btn.privato{background:rgba(200,168,78,0.12);border-color:rgba(200,168,78,0.3);color:var(--gold)}
+.hero-who-btn.privato:hover{background:rgba(200,168,78,0.2);border-color:var(--gold);transform:translateY(-2px)}
+.hero-who-btn svg{width:22px;height:22px}
+.hero-who-btn small{display:block;font-size:11px;font-weight:400;opacity:0.7;margin-top:2px}
+
 /* Hero card */
-.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-xl);padding:40px;backdrop-filter:blur(10px)}
-.hero-card-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:600;margin-bottom:24px}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.hero-stat{text-align:center;padding:20px;background:rgba(255,255,255,0.04);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.06)}
-.hero-stat-number{font-size:28px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:4px}
-.hero-stat-label{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500}
-.hero-stat-number.gold{color:var(--gold)}
-.hero-stat-number.teal{color:var(--teal)}
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-xl);padding:32px;backdrop-filter:blur(10px)}
+.hero-card-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-weight:600;margin-bottom:20px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.hero-stat{text-align:center;padding:16px 12px;background:rgba(255,255,255,0.04);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.06)}
+.hero-stat-number{font-size:24px;font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:2px}
+.hero-stat-label{font-size:10px;color:rgba(255,255,255,0.4);font-weight:500}
+.hero-stat-number.gold{color:var(--gold)}.hero-stat-number.teal{color:var(--teal)}
+.hero-stats-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 
 /* STATS BAR */
 .stats-bar{background:var(--white);border-bottom:1px solid var(--gray-200);padding:48px 32px}
@@ -96,7 +86,7 @@ section{padding:100px 32px}
 .section-inner{max-width:1200px;margin:0 auto}
 .section-label{display:inline-flex;align-items:center;gap:8px;background:rgba(26,138,154,0.08);color:var(--teal);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
 .section-title{font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--navy);letter-spacing:-1px;line-height:1.15;margin-bottom:16px}
-.section-sub{font-size:16px;color:var(--gray-500);max-width:560px;line-height:1.7}
+.section-sub{font-size:16px;color:var(--gray-500);max-width:640px;line-height:1.7}
 
 /* COSA FACCIO */
 .areas{background:var(--gray-50)}
@@ -117,62 +107,100 @@ section{padding:100px 32px}
 .area-tags{display:flex;flex-wrap:wrap;gap:6px}
 .area-tag{font-size:11px;font-weight:600;color:var(--gray-500);background:var(--gray-100);padding:4px 10px;border-radius:6px}
 
-/* ════════════════════════════════════════════
-   DEALER SUITE — INTRO + 5 SERVICE SHOWCASES
-   ════════════════════════════════════════════ */
+/* ═══ DEALER SUITE INTRO ═══ */
 .ds-intro{background:var(--navy);position:relative;overflow:hidden}
 .ds-intro .section-label{background:rgba(200,168,78,0.12);color:var(--gold)}
 .ds-intro .section-title{color:var(--white)}
 .ds-intro .section-sub{color:rgba(255,255,255,0.55)}
 .ds-intro-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
-.ds-intro-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px 20px;text-align:center;transition:all 0.3s;cursor:pointer;text-decoration:none}
+.ds-intro-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px 16px;text-align:center;transition:all 0.3s;cursor:pointer;text-decoration:none}
 .ds-intro-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(200,168,78,0.3);transform:translateY(-2px)}
 .ds-intro-card-num{font-size:28px;font-weight:800;margin-bottom:6px}
-.ds-intro-card-name{font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px}
-.ds-intro-card-desc{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.4}
-.ds-intro-cta{margin-top:48px;display:flex;gap:14px;justify-content:center}
+.ds-intro-card-name{font-size:12px;font-weight:600;color:var(--white);margin-bottom:4px}
+.ds-intro-card-desc{font-size:10px;color:rgba(255,255,255,0.4);line-height:1.4}
+.ds-intro-cta{margin-top:48px;text-align:center}
+.ds-intro-cta .btn{margin:0 8px 8px 0}
+.ds-intro-bonus{margin-top:20px;text-align:center;font-size:14px;color:var(--gold);font-weight:600}
+.ds-intro-bonus span{background:rgba(200,168,78,0.15);padding:6px 16px;border-radius:8px;border:1px solid rgba(200,168,78,0.25)}
 
-/* Service showcase section */
+/* ═══ SERVICE SHOWCASES ═══ */
 .svc{padding:100px 32px;position:relative}
-.svc:nth-child(odd){background:var(--white)}
-.svc:nth-child(even){background:var(--gray-50)}
+.svc-alt{background:var(--gray-50)}
 .svc-inner{max-width:1200px;margin:0 auto}
-.svc-header{margin-bottom:48px}
+.svc-header{margin-bottom:48px;max-width:800px}
 .svc-num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;font-weight:800;font-size:16px;margin-bottom:16px}
 .svc-num.sim{background:rgba(200,168,78,0.12);color:var(--gold)}
 .svc-num.spi{background:rgba(26,138,154,0.1);color:var(--teal)}
 .svc-num.ami{background:rgba(15,36,64,0.08);color:var(--navy)}
 .svc-num.rp{background:rgba(200,168,78,0.12);color:var(--gold)}
 .svc-num.cru{background:rgba(26,138,154,0.1);color:var(--teal)}
-.svc h2{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--navy);letter-spacing:-0.8px;margin-bottom:12px;line-height:1.15}
-.svc-lead{font-size:17px;color:var(--gray-600);line-height:1.7;max-width:700px}
+.svc h2{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--navy);letter-spacing:-0.8px;margin-bottom:16px;line-height:1.15}
+.svc-lead{font-size:17px;color:var(--gray-600);line-height:1.75;max-width:800px}
 
-/* Two-col layout: text + screenshots */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.svc-text h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:16px}
+/* Service content grid - alternating */
+.svc-content{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.svc-content.reverse{direction:rtl}
+.svc-content.reverse>*{direction:ltr}
 .svc-text p{font-size:15px;color:var(--gray-600);line-height:1.75;margin-bottom:16px}
-.svc-features{margin-top:24px;display:flex;flex-direction:column;gap:12px}
-.svc-feat{display:flex;gap:12px;align-items:flex-start}
-.svc-feat-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.svc-highlight{background:var(--navy);color:var(--white);border-radius:var(--radius-lg);padding:28px;margin:24px 0}
+.svc-highlight p{color:rgba(255,255,255,0.75);margin:0;font-size:14px;line-height:1.7}
+.svc-highlight strong{color:var(--gold)}
+.svc-features{margin-top:24px;display:flex;flex-direction:column;gap:14px}
+.svc-feat{display:flex;gap:14px;align-items:flex-start;padding:14px;background:var(--gray-50);border-radius:10px;border:1px solid var(--gray-200);transition:all 0.2s}
+.svc-alt .svc-feat{background:var(--white)}
+.svc-feat:hover{border-color:var(--teal);box-shadow:var(--shadow-md)}
+.svc-feat-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .svc-feat-icon.teal{background:rgba(26,138,154,0.1);color:var(--teal)}
 .svc-feat-icon.gold{background:rgba(200,168,78,0.12);color:var(--gold)}
 .svc-feat-icon.navy{background:rgba(15,36,64,0.08);color:var(--navy)}
 .svc-feat h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
 .svc-feat p{font-size:13px;color:var(--gray-500);line-height:1.5;margin:0}
 
-/* Screenshot gallery */
-.svc-screens{display:flex;flex-direction:column;gap:16px}
-.svc-screen{border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow-md);transition:all 0.3s}
+/* Screenshot gallery - horizontal cards */
+.svc-gallery{display:grid;gap:16px}
+.svc-gallery.cols-2{grid-template-columns:1fr 1fr}
+.svc-gallery.cols-1{grid-template-columns:1fr}
+.svc-screen{border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow-md);transition:all 0.3s;cursor:pointer;position:relative}
 .svc-screen:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
 .svc-screen img{width:100%;display:block}
-.svc-screen-caption{padding:12px 16px;background:var(--gray-50);font-size:12px;color:var(--gray-500);font-weight:500;border-top:1px solid var(--gray-200)}
+.svc-screen-caption{padding:10px 14px;background:var(--gray-50);font-size:11px;color:var(--gray-500);font-weight:500;border-top:1px solid var(--gray-200)}
+.svc-alt .svc-screen-caption{background:var(--white)}
+.svc-screen-zoom{position:absolute;top:12px;right:12px;width:32px;height:32px;background:rgba(15,36,64,0.7);border-radius:8px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.2s}
+.svc-screen:hover .svc-screen-zoom{opacity:1}
+.svc-screen-zoom svg{width:16px;height:16px;stroke:white;fill:none;stroke-width:2}
 
-/* Screenshots stacked with overlap effect */
-.svc-screens-overlap{position:relative}
-.svc-screens-overlap .svc-screen:nth-child(2){margin-top:-40px;margin-left:24px;position:relative;z-index:1}
+/* Full-width gallery below text */
+.svc-gallery-full{margin-top:48px}
 
-/* CTA bar between services */
-.svc-cta-bar{margin-top:40px;padding-top:32px;border-top:1px solid var(--gray-200);display:flex;align-items:center;gap:16px}
+/* CTA inline */
+.svc-cta{margin-top:32px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+
+/* ═══ PRIVATE SECTION ═══ */
+.private-section{background:var(--navy);position:relative;overflow:hidden}
+.private-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,168,78,0.08) 0%,transparent 60%)}
+.private-inner{position:relative;max-width:1200px;margin:0 auto}
+.private-section .section-label{background:rgba(200,168,78,0.12);color:var(--gold)}
+.private-section .section-title{color:var(--white)}
+.private-section .section-sub{color:rgba(255,255,255,0.55)}
+.private-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px;align-items:center}
+.private-text h3{font-size:24px;font-weight:800;color:var(--white);margin-bottom:16px;line-height:1.2}
+.private-text p{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:16px}
+.private-steps{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.private-step{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:20px;transition:all 0.2s}
+.private-step:hover{background:rgba(255,255,255,0.06);border-color:rgba(200,168,78,0.2)}
+.private-step-num{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.private-step h4{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px}
+.private-step p{font-size:12px;color:rgba(255,255,255,0.45);margin:0;line-height:1.5}
+.private-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* Video thumbnails grid */
+.private-videos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.private-video{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;transition:all 0.3s}
+.private-video:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.3)}
+.private-video img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.private-video-overlay{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,0.6));display:flex;align-items:flex-end;padding:16px}
+.private-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.private-video-play svg{width:18px;height:18px;fill:white;margin-left:2px}
 
 /* ═══ CHI SONO ═══ */
 .about{background:var(--gray-50)}
@@ -191,30 +219,20 @@ section{padding:100px 32px}
 .about-highlight h5{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:2px}
 .about-highlight p{font-size:12px;color:var(--gray-500);margin:0;line-height:1.4}
 
-/* COME LAVORO */
-.process{background:var(--white)}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:56px}
-.process-step{position:relative;padding:32px 24px;background:var(--gray-50);border-radius:var(--radius-lg);border:1px solid var(--gray-200);text-align:center;transition:all 0.3s}
-.process-step:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.step-num{width:36px;height:36px;border-radius:10px;background:var(--teal);color:var(--white);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-bottom:16px}
-.process-step h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
-.process-step p{font-size:13px;color:var(--gray-500);line-height:1.55}
-.process-step:not(:last-child)::after{content:'\2192';position:absolute;right:-18px;top:44px;color:var(--gray-300);font-size:18px;z-index:1}
+/* ═══ FAQ ═══ */
+.faq-section{background:var(--white)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+.faq-col-title{font-size:14px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.faq-item{border:1px solid var(--gray-200);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:all 0.2s}
+.faq-item:hover{border-color:var(--teal)}
+.faq-q{padding:20px 24px;font-size:15px;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:var(--gray-50)}
+.faq-q::after{content:'+';font-size:20px;font-weight:300;color:var(--teal);transition:transform 0.2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all 0.3s ease}
+.faq-item.open .faq-a{padding:0 24px 20px;max-height:300px}
+.faq-a p{font-size:14px;color:var(--gray-600);line-height:1.7}
 
-/* YOUTUBE */
-.youtube-section{background:var(--gray-50);border-top:1px solid var(--gray-200)}
-.youtube-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px;align-items:center}
-.youtube-content h3{font-size:24px;font-weight:800;color:var(--navy);margin-bottom:16px}
-.youtube-content p{font-size:15px;color:var(--gray-600);line-height:1.7;margin-bottom:24px}
-.youtube-preview{background:var(--white);border-radius:var(--radius-xl);padding:24px;border:1px solid var(--gray-200);text-align:center}
-.youtube-thumbnail{width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;position:relative;background:var(--navy);display:flex;align-items:center;justify-content:center}
-.youtube-thumbnail img{width:100%;height:100%;object-fit:cover;opacity:0.7}
-.youtube-play{position:absolute;width:64px;height:64px;background:rgba(255,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none}
-.youtube-play svg{width:24px;height:24px;fill:white;margin-left:3px}
-.youtube-channel-name{margin-top:16px;font-size:14px;font-weight:600;color:var(--navy)}
-.youtube-channel-sub{font-size:12px;color:var(--gray-500);margin-top:4px}
-
-/* CTA */
+/* ═══ CTA ═══ */
 .cta-section{background:var(--navy);text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(200,168,78,0.1) 0%,transparent 60%)}
 .cta-inner{position:relative;max-width:680px;margin:0 auto}
@@ -239,6 +257,13 @@ section{padding:100px 32px}
 .footer-links a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:13px;transition:color 0.2s}
 .footer-links a:hover{color:rgba(255,255,255,0.7)}
 
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;cursor:pointer;padding:32px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95vw;max-height:90vh;border-radius:8px;box-shadow:0 16px 64px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:20px;right:28px;width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none}
+.lightbox-close svg{width:20px;height:20px;stroke:white;stroke-width:2}
+
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .hero-inner>*{animation:fadeUp 0.8s ease-out both}
@@ -249,11 +274,11 @@ section{padding:100px 32px}
   .hero-inner{grid-template-columns:1fr;gap:48px}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .areas-grid{grid-template-columns:1fr 1fr}
-  .process-steps{grid-template-columns:1fr 1fr}
-  .process-step:not(:last-child)::after{display:none}
-  .youtube-grid{grid-template-columns:1fr}
-  .svc-grid{grid-template-columns:1fr}
   .ds-intro-grid{grid-template-columns:repeat(3,1fr)}
+  .svc-content{grid-template-columns:1fr}
+  .svc-content.reverse{direction:ltr}
+  .private-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .nav-links{display:none}
@@ -261,43 +286,39 @@ section{padding:100px 32px}
   section,.svc{padding:64px 20px}
   .stats-bar-inner{grid-template-columns:1fr 1fr}
   .areas-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:1fr}
   .hero-inner{padding:48px 20px}
   .about-highlights{grid-template-columns:1fr}
   .cta-info{flex-direction:column;gap:16px;align-items:center}
   .footer-inner{flex-direction:column;gap:20px;text-align:center}
   .ds-intro-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .hero-who{flex-direction:column}
+  .svc-gallery.cols-2{grid-template-columns:1fr}
+  .private-videos{grid-template-columns:1fr}
+  .private-steps{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-brand">
-      <img src="logo-white.png" alt="Alessandro Tasso" class="nav-logo-img">
-    </a>
-    <button class="nav-mobile-toggle">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-    </button>
-    <ul class="nav-links">
-      <li><a href="#cosa-faccio">Cosa Faccio</a></li>
-      <li><a href="#dealer-suite">Dealer Suite</a></li>
-      <li><a href="#chi-sono">Chi Sono</a></li>
-      <li><a href="#come-lavoro">Come Lavoro</a></li>
-      <li><a href="#contatti">Contatti</a></li>
-      <div class="nav-divider"></div>
-      <li><a href="https://dealersuite.alessandrotasso.it" class="nav-cta">Accedi al Portale</a></li>
-    </ul>
-  </div>
-</nav>
+<nav class="nav"><div class="nav-inner">
+  <a href="#" class="nav-brand"><img src="logo-white.png" alt="Alessandro Tasso" class="nav-logo-img"></a>
+  <button class="nav-mobile-toggle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+  <ul class="nav-links">
+    <li><a href="#cosa-faccio">Cosa Faccio</a></li>
+    <li><a href="#dealer-suite">Dealer Suite</a></li>
+    <li><a href="#privato">Personal Car Shopper</a></li>
+    <li><a href="#chi-sono">Chi Sono</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <div class="nav-divider"></div>
+    <li><a href="https://dealersuite.alessandrotasso.it" class="nav-cta">Accedi al Portale</a></li>
+  </ul>
+</div></nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg-image"></div>
-  <div class="hero-bg-overlay"></div>
-  <div class="hero-pattern"></div>
+  <div class="hero-bg-image"></div><div class="hero-bg-overlay"></div><div class="hero-pattern"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-badge"><span class="hero-badge-dot"></span>Automotive Profit Manager</div>
@@ -305,431 +326,412 @@ section{padding:100px 32px}
       <p class="hero-sub">Affianco concessionarie e imprenditori dell'auto per migliorare margini, processi e posizionamento. Con strumenti digitali, consulenza strategica e una domanda: &ldquo;Cosa ti rende davvero unico?&rdquo;</p>
       <div class="hero-actions">
         <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          Prenota una Call Gratuita
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Prenota una Call Gratuita</a>
+      </div>
+      <div class="hero-who">
+        <a href="#dealer-suite" class="hero-who-btn dealer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <div>Sei un Dealer?<small>Strumenti per concessionarie</small></div>
         </a>
-        <a href="#cosa-faccio" class="btn btn-outline">Scopri i Servizi &rarr;</a>
+        <a href="#privato" class="hero-who-btn privato">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><path d="M5 12h14"/></svg>
+          <div>Sei un Privato?<small>Trovo l'auto dei tuoi sogni</small></div>
+        </a>
       </div>
     </div>
     <div class="hero-card">
       <div class="hero-card-label">Piattaforma Dealer Suite</div>
       <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-number gold">SIM</div>
-          <div class="hero-stat-label">Simulatore Multiservizi</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number teal">SPI</div>
-          <div class="hero-stat-label">Stock Performance Index</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number">AMI</div>
-          <div class="hero-stat-label">Automotive Margin Index</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-number gold">RP</div>
-          <div class="hero-stat-label">Relazioni Professionali</div>
-        </div>
+        <div class="hero-stat"><div class="hero-stat-number gold">SIM</div><div class="hero-stat-label">Simulatore Multiservizi</div></div>
+        <div class="hero-stat"><div class="hero-stat-number teal">SPI</div><div class="hero-stat-label">Stock Performance Index</div></div>
+        <div class="hero-stat"><div class="hero-stat-number">AMI</div><div class="hero-stat-label">Automotive Margin Index</div></div>
+      </div>
+      <div class="hero-stats-row2">
+        <div class="hero-stat"><div class="hero-stat-number gold">RP</div><div class="hero-stat-label">Relazioni Professionali</div></div>
+        <div class="hero-stat"><div class="hero-stat-number teal">CRI</div><div class="hero-stat-label">Cruscotto Istantaneo</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stats-bar-inner">
-    <div class="stat-item"><div class="stat-number accent">25+</div><div class="stat-label">Anni di esperienza<br>nel settore auto</div></div>
-    <div class="stat-item"><div class="stat-number">1.000+</div><div class="stat-label">Trattative gestite<br>con successo</div></div>
-    <div class="stat-item"><div class="stat-number accent">20+</div><div class="stat-label">Concessionarie<br>seguite attivamente</div></div>
-    <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Strumenti digitali<br>per concessionarie</div></div>
-  </div>
-</div>
+<div class="stats-bar"><div class="stats-bar-inner">
+  <div class="stat-item"><div class="stat-number accent">25+</div><div class="stat-label">Anni di esperienza<br>nel settore auto</div></div>
+  <div class="stat-item"><div class="stat-number">1.000+</div><div class="stat-label">Trattative gestite<br>con successo</div></div>
+  <div class="stat-item"><div class="stat-number accent">20+</div><div class="stat-label">Concessionarie<br>seguite attivamente</div></div>
+  <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Strumenti digitali<br>per concessionarie</div></div>
+</div></div>
 
 <!-- COSA FACCIO -->
-<section class="areas" id="cosa-faccio">
-  <div class="section-inner">
-    <div class="section-label">Cosa faccio</div>
-    <h2 class="section-title">Tre aree, un unico obiettivo:<br>farti vendere meglio</h2>
-    <p class="section-sub">Consulenza, tecnologia e comunicazione al servizio di chi opera nel mondo dell'auto.</p>
-    <div class="areas-grid">
-      <div class="area-card">
-        <div class="area-icon profit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <h3>Automotive Profit Manager</h3>
-        <p>Affianco saloni e concessionarie per migliorare margini e condizioni finanziarie, gestire selezione e analisi attitudinale del personale, ottimizzare marketing, strumenti digitali e processi aziendali.</p>
-        <div class="area-tags"><span class="area-tag">Margini</span><span class="area-tag">Processi</span><span class="area-tag">Personale</span><span class="area-tag">Marketing</span></div>
-      </div>
-      <div class="area-card">
-        <div class="area-icon pcs"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><path d="M5 12h14"/></svg></div>
-        <h3>Personal Car Shopper</h3>
-        <p>Aiuto privati e imprenditori a trovare l'auto perfetta per le loro esigenze, con consulenza personalizzata, ricerca sul mercato europeo e consegna a domicilio.</p>
-        <div class="area-tags"><span class="area-tag">Consulenza</span><span class="area-tag">Import</span><span class="area-tag">Premium</span></div>
-      </div>
-      <div class="area-card">
-        <div class="area-icon video"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-        <h3>Posizionamento &amp; Video</h3>
-        <p>Con il format &ldquo;Una Giornata in&hellip;&rdquo; creo piani strategici che uniscono UVP, docufilm, podcast, pillole social e copertura mediatica. Non &egrave; un video: &egrave; una comunicazione che lascia il segno.</p>
-        <div class="area-tags"><span class="area-tag">Docufilm</span><span class="area-tag">UVP</span><span class="area-tag">Social</span><span class="area-tag">Podcast</span></div>
-      </div>
+<section class="areas" id="cosa-faccio"><div class="section-inner">
+  <div class="section-label">Cosa faccio</div>
+  <h2 class="section-title">Tre aree, un unico obiettivo:<br>farti vendere meglio</h2>
+  <p class="section-sub">Consulenza, tecnologia e comunicazione al servizio di chi opera nel mondo dell'auto.</p>
+  <div class="areas-grid">
+    <div class="area-card">
+      <div class="area-icon profit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <h3>Automotive Profit Manager</h3>
+      <p>Affianco saloni e concessionarie per migliorare margini e condizioni finanziarie, gestire selezione e analisi attitudinale del personale, ottimizzare marketing, strumenti digitali e processi aziendali.</p>
+      <div class="area-tags"><span class="area-tag">Margini</span><span class="area-tag">Processi</span><span class="area-tag">Personale</span><span class="area-tag">Marketing</span></div>
+    </div>
+    <div class="area-card">
+      <div class="area-icon pcs"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><path d="M5 12h14"/></svg></div>
+      <h3>Personal Car Shopper</h3>
+      <p>Aiuto privati e imprenditori a trovare l'auto perfetta. Consulenza personalizzata, ricerca sul mercato europeo, gestione della burocrazia e consegna a domicilio o in azienda.</p>
+      <div class="area-tags"><span class="area-tag">Consulenza</span><span class="area-tag">Import</span><span class="area-tag">Premium</span><span class="area-tag">Consegna</span></div>
+    </div>
+    <div class="area-card">
+      <div class="area-icon video"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <h3>Posizionamento &amp; Video</h3>
+      <p>Con il format &ldquo;Una Giornata in&hellip;&rdquo; creo piani strategici che uniscono UVP, docufilm, podcast, pillole social e copertura mediatica. Una comunicazione che lascia il segno.</p>
+      <div class="area-tags"><span class="area-tag">Docufilm</span><span class="area-tag">UVP</span><span class="area-tag">Social</span><span class="area-tag">Podcast</span></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- ════════════════════════════════════
-     DEALER SUITE — INTRO
-     ════════════════════════════════════ -->
-<section class="ds-intro" id="dealer-suite">
-  <div class="section-inner">
-    <div class="section-label">Dealer Suite</div>
-    <h2 class="section-title">5 strumenti, una piattaforma.<br>Tutto ci&ograve; che serve al tuo salone.</h2>
-    <p class="section-sub">Dealer Suite &egrave; la piattaforma riservata ai concessionari che vogliono dati, report e controllo in un'unica interfaccia professionale.</p>
-    <div class="ds-intro-grid">
-      <a href="#svc-sim" class="ds-intro-card">
-        <div class="ds-intro-card-num" style="color:var(--gold)">SIM</div>
-        <div class="ds-intro-card-name">Simulatore Multiservizi</div>
-        <div class="ds-intro-card-desc">Tutti i simulatori in uno</div>
-      </a>
-      <a href="#svc-spi" class="ds-intro-card">
-        <div class="ds-intro-card-num" style="color:var(--teal)">SPI</div>
-        <div class="ds-intro-card-name">Stock Performance Index</div>
-        <div class="ds-intro-card-desc">Analisi stock in 1 minuto</div>
-      </a>
-      <a href="#svc-ami" class="ds-intro-card">
-        <div class="ds-intro-card-num" style="color:var(--white)">AMI</div>
-        <div class="ds-intro-card-name">Automotive Margin Index</div>
-        <div class="ds-intro-card-desc">Il tuo benchmark di mercato</div>
-      </a>
-      <a href="#svc-rp" class="ds-intro-card">
-        <div class="ds-intro-card-num" style="color:var(--gold)">RP</div>
-        <div class="ds-intro-card-name">Relazioni Professionali</div>
-        <div class="ds-intro-card-desc">Report vettura in automatico</div>
-      </a>
-      <a href="#svc-cru" class="ds-intro-card">
-        <div class="ds-intro-card-num" style="color:var(--teal)">CRI</div>
-        <div class="ds-intro-card-name">Cruscotto Istantaneo</div>
-        <div class="ds-intro-card-desc">KPI aziendali in tempo reale</div>
-      </a>
-    </div>
-    <div class="ds-intro-cta">
-      <a href="https://dealersuite.alessandrotasso.it" class="btn btn-gold">Accedi a Dealer Suite &rarr;</a>
-      <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-outline">Prenota una Demo</a>
-    </div>
+<!-- ═══ DEALER SUITE INTRO ═══ -->
+<section class="ds-intro" id="dealer-suite"><div class="section-inner">
+  <div class="section-label">Dealer Suite</div>
+  <h2 class="section-title">5 strumenti, una piattaforma.<br>Tutto ci&ograve; che serve al tuo salone.</h2>
+  <p class="section-sub">Dealer Suite &egrave; la piattaforma riservata ai concessionari che vogliono dati, report e controllo in un'unica interfaccia. Che tu sia un salone multimarca da 30 vetture o una concessionaria strutturata da 300, questi strumenti cambiano i numeri dal giorno dopo.</p>
+  <div class="ds-intro-grid">
+    <a href="#svc-sim" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--gold)">SIM</div><div class="ds-intro-card-name">Simulatore Multiservizi</div><div class="ds-intro-card-desc">Tutti i simulatori in uno</div></a>
+    <a href="#svc-spi" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--teal)">SPI</div><div class="ds-intro-card-name">Stock Performance Index</div><div class="ds-intro-card-desc">Analisi stock in 1 minuto</div></a>
+    <a href="#svc-ami" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--white)">AMI</div><div class="ds-intro-card-name">Automotive Margin Index</div><div class="ds-intro-card-desc">Il tuo benchmark di mercato</div></a>
+    <a href="#svc-rp" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--gold)">RP</div><div class="ds-intro-card-name">Relazioni Professionali</div><div class="ds-intro-card-desc">Report vettura in automatico</div></a>
+    <a href="#svc-cru" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--teal)">CRI</div><div class="ds-intro-card-name">Cruscotto Istantaneo</div><div class="ds-intro-card-desc">KPI aziendali in tempo reale</div></a>
   </div>
-</section>
+  <div class="ds-intro-cta">
+    <a href="https://dealersuite.alessandrotasso.it" class="btn btn-gold">Accedi a Dealer Suite &rarr;</a>
+  </div>
+  <div class="ds-intro-bonus"><span>&#127873; Iscriviti ora e ricevi 100 crediti omaggio per testare tutti i servizi</span></div>
+</div></section>
 
 <!-- ═══ 1. SIMULATORE MULTISERVIZI ═══ -->
-<div class="svc" id="svc-sim">
-  <div class="svc-inner">
-    <div class="svc-header">
-      <div class="svc-num sim">01</div>
-      <h2>Simulatore Multiservizi</h2>
-      <p class="svc-lead">Un unico strumento che sostituisce tutti i simulatori sparsi sulla scrivania del venditore. Finanziarie, assicurazioni, garanzie, provvigioni e contrattualistica &mdash; tutto in un click.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-text">
-        <h3>Pensato da un venditore, per i venditori</h3>
-        <p>Il Simulatore Multiservizi nasce dall'esperienza diretta in salone. Riunisce in un'unica interfaccia tutte le finanziarie con cui lavori, la compagnia assicurativa per la polizza furto e incendio, le societ&agrave; di garanzie per le estensioni e il piano di ammortamento che guida il venditore a parlare di valore futuro della vettura e di buyback.</p>
-        <p>Le provvigioni vengono calcolate in tempo reale, sia per la forza vendita che per il dealer. E al termine della simulazione, il sistema genera automaticamente tutta la documentazione necessaria.</p>
-        <div class="svc-features">
-          <div class="svc-feat">
-            <div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <div><h4>Tutte le finanziarie in un simulatore</h4><p>Deutsche Bank, Fiditalia e altre &mdash; configurabili per ogni dealer</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><h4>Polizze, garanzie e buyback integrati</h4><p>Furto &amp; incendio, estensioni garanzia, piano ammortamento e valore futuro</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></div>
-            <div><h4>Documenti generati automaticamente</h4><p>Contratto di vendita, riepilogo globale, scheda permuta e raccolta dati finanziaria</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-            <div><h4>Multi-ruolo: Admin, Dealer, Venditore</h4><p>Ogni ruolo vede solo ci&ograve; che gli compete, con le proprie provvigioni in tempo reale</p></div>
-          </div>
-        </div>
+<div class="svc" id="svc-sim"><div class="svc-inner">
+  <div class="svc-header">
+    <div class="svc-num sim">01</div>
+    <h2>Simulatore Multiservizi</h2>
+    <p class="svc-lead">Quanti simulatori ha il tuo venditore sulla scrivania? Deutsche Bank, Fiditalia, Compass, il foglio Excel per le garanzie, la tabella assicurativa, la calcolatrice per le provvigioni&hellip; Basta. Il Simulatore Multiservizi unisce tutto in un'unica interfaccia, pensata da chi ha venduto auto per 25 anni.</p>
+  </div>
+  <div class="svc-content">
+    <div class="svc-text">
+      <p>Ogni venditore perde tempo prezioso saltando da un simulatore all'altro, rischiando errori e dimenticando di proporre servizi che generano margine. Il SIM risolve questo problema alla radice: in una sola schermata il venditore configura finanziamento, polizza furto e incendio, estensione garanzia, antifurto, mobilit&agrave; e genera il piano di ammortamento che lo guida a parlare di <strong>valore futuro della vettura e buyback</strong> con il cliente.</p>
+      <div class="svc-highlight">
+        <p><strong>Le provvigioni vengono calcolate in tempo reale</strong>, sia per il venditore che per il dealer. Nessuna sorpresa a fine mese. Il venditore sa esattamente quanto guadagna su ogni operazione mentre la costruisce con il cliente. E il dealer ha il controllo totale dei margini.</p>
       </div>
-      <div class="svc-screens">
-        <div class="svc-screen"><img src="Simulatore1.png" alt="Simulatore Multiservizi - Interfaccia principale"><div class="svc-screen-caption">Interfaccia principale: anagrafica, finanziamento, assicurazioni e garanzie in un'unica vista</div></div>
-        <div class="svc-screen"><img src="Simulatore2.png" alt="Simulatore - Riepilogo Commerciale"><div class="svc-screen-caption">Riepilogo commerciale generato automaticamente con tutti i dettagli dell'operazione</div></div>
+      <p>Al termine della simulazione, il sistema genera automaticamente il <strong>contratto di vendita</strong>, il <strong>riepilogo globale per l'amministrazione</strong>, la <strong>scheda di permuta</strong> e la <strong>raccolta dati per il caricamento della pratica alla finanziaria</strong>. Zero data entry, zero errori, zero tempo perso.</p>
+      <div class="svc-features">
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><h4>Tutte le finanziarie in un simulatore</h4><p>Configurabili per ogni dealer &mdash; aggiungi, togli, personalizza tassi e condizioni</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Polizze, garanzie, ammortamento e buyback</h4><p>Tutto integrato per guidare il venditore nella proposta completa al cliente</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></div><div><h4>Documenti generati in automatico</h4><p>Contratto, riepilogo, permuta e raccolta dati finanziaria con un click</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><h4>Multi-ruolo: Admin, Dealer, Venditore</h4><p>Ogni ruolo vede solo ci&ograve; che gli compete &mdash; provvigioni incluse</p></div></div>
+      </div>
+      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri il Simulatore &rarr;</a></div>
+    </div>
+    <div>
+      <div class="svc-gallery cols-1">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="Simulatore1.png" alt="Simulatore"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Interfaccia principale: anagrafica, finanziamento, assicurazioni e garanzie in un'unica vista</div></div>
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="Simulatore2.png" alt="Riepilogo"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Riepilogo commerciale generato automaticamente con tutti i dettagli</div></div>
       </div>
     </div>
   </div>
-</div>
+</div></div>
 
 <!-- ═══ 2. STOCK PERFORMANCE INDEX ═══ -->
-<div class="svc" id="svc-spi">
-  <div class="svc-inner">
-    <div class="svc-header">
-      <div class="svc-num spi">02</div>
-      <h2>Stock Performance Index</h2>
-      <p class="svc-lead">Analizza l'intero stock del tuo salone su AutoScout24 in 3 click e 1 minuto. Scopri quali annunci funzionano, quali vanno migliorati e dove intervenire subito.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-text">
-        <h3>Il tuo stock parla: impara ad ascoltarlo</h3>
-        <p>Ogni vettura online racconta una storia fatta di visualizzazioni, click, preferiti e contatti. Lo Stock Performance Index legge questi dati e assegna uno score a ogni annuncio, ordinandoli dal pi&ugrave; performante a quello a rischio immobilizzo.</p>
-        <p>Per ogni veicolo ricevi una diagnosi operativa chiara: cosa funziona, cosa non funziona e cosa fare concretamente per migliorare la performance. Il sistema suggerisce anche promozioni mirate per sbloccare le vetture ferme.</p>
-        <div class="svc-features">
-          <div class="svc-feat">
-            <div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21H3V3"/><path d="M21 7l-5 5-4-4-6 6"/></svg></div>
-            <div><h4>Score e classificazione automatica</h4><p>Ogni vettura riceve un punteggio e un label: Top, Forte, Nuovo, Ok o A rischio</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
-            <div><h4>Diagnosi e azioni suggerite</h4><p>Per ogni annuncio: cosa va bene, cosa migliorare, promozioni consigliate</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <div><h4>Classifica nazionale, regionale e provinciale</h4><p>Confrontati con gli altri dealer e scopri la tua posizione nel mercato</p></div>
-          </div>
-        </div>
+<div class="svc svc-alt" id="svc-spi"><div class="svc-inner">
+  <div class="svc-header">
+    <div class="svc-num spi">02</div>
+    <h2>Stock Performance Index</h2>
+    <p class="svc-lead">Analizza l'intero stock del tuo salone su AutoScout24 in 1 minuto, con soli 3 click. Scopri quali annunci generano contatti, quali stanno perdendo forza e dove intervenire immediatamente per sbloccare le vetture ferme.</p>
+  </div>
+  <div class="svc-content reverse">
+    <div class="svc-text">
+      <p>Ogni vettura online racconta una storia fatta di visualizzazioni, click, preferiti e contatti. Lo Stock Performance Index legge questi dati e assegna uno <strong>score a ogni annuncio</strong>, classificandolo come Top, Forte, Nuovo, Ok o A rischio. In un colpo d'occhio sai esattamente lo stato di salute del tuo stock.</p>
+      <p>Ma il vero valore sta nella <strong>diagnosi operativa</strong>: per ogni veicolo il sistema ti dice cosa funziona, cosa no, e ti suggerisce azioni concrete. &ldquo;Cambia la foto principale&rdquo;, &ldquo;Il prezzo potrebbe essere la barriera &mdash; valuta un ribasso&rdquo;, &ldquo;Valorizzala come vetrina con video e social&rdquo;. Non teorie: indicazioni operative che i tuoi venditori possono eseguire subito.</p>
+      <div class="svc-highlight">
+        <p><strong>Classifica nazionale, regionale e provinciale.</strong> Scopri come si posiziona il tuo stock rispetto a tutti i dealer nel database. Il tuo score medio, la media di mercato, e la tua posizione esatta. &Egrave; il benchmark che ti mancava per capire dove stai e dove puoi arrivare.</p>
       </div>
-      <div class="svc-screens">
-        <div class="svc-screen"><img src="SPI1.png" alt="SPI - Analisi dello stock e priorità operative"><div class="svc-screen-caption">Dashboard SPI: analisi dello stock, score medio e priorit&agrave; operative</div></div>
-        <div class="svc-screen"><img src="SPI2.png" alt="SPI - Dettaglio vetture con score e label"><div class="svc-screen-caption">Dettaglio vetture con score, diagnosi e suggerimenti per ogni annuncio</div></div>
-        <div class="svc-screen"><img src="SPI3.png" alt="SPI - Vetture a rischio"><div class="svc-screen-caption">Filtro &ldquo;A rischio&rdquo;: le vetture che richiedono un intervento urgente</div></div>
+      <div class="svc-features">
+        <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21H3V3"/><path d="M21 7l-5 5-4-4-6 6"/></svg></div><div><h4>Score e classificazione automatica</h4><p>Punteggio e label per ogni vettura, dal Top all'A rischio</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div><h4>Diagnosi e azioni suggerite</h4><p>Cosa fare concretamente per migliorare ogni annuncio</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h4>Export Excel per il team</h4><p>Scarica l'analisi completa e condividila con la tua forza vendita</p></div></div>
+      </div>
+      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri lo SPI &rarr;</a></div>
+    </div>
+    <div>
+      <div class="svc-gallery cols-1">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="SPI1.png" alt="SPI Dashboard"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Dashboard: analisi dello stock, score medio e priorit&agrave; operative</div></div>
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="SPI2.png" alt="SPI Dettaglio"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Dettaglio vetture con score, diagnosi e suggerimenti operativi</div></div>
+      </div>
+      <div class="svc-gallery cols-1" style="margin-top:16px">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="SPI3.png" alt="SPI A rischio"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Filtro &ldquo;A rischio&rdquo;: vetture che richiedono intervento urgente</div></div>
       </div>
     </div>
   </div>
-</div>
+</div></div>
 
-<!-- ═══ 3. AUTOMOTIVE MARGIN INDEX ═══ -->
-<div class="svc" id="svc-ami">
-  <div class="svc-inner">
-    <div class="svc-header">
-      <div class="svc-num ami">03</div>
-      <h2>Automotive Margin Index</h2>
-      <p class="svc-lead">Come si posiziona la tua concessionaria rispetto al mercato? Un'intervista guidata di 5 minuti che fotografa margini, servizi, stock e produttivit&agrave; &mdash; confrontandoti con i tuoi colleghi.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-text">
-        <h3>Il tuo benchmark, aggiornato ogni mese</h3>
-        <p>L'AMI analizza quattro aree fondamentali della tua attivit&agrave;: marginalit&agrave; sulla vendita del ferro e dei servizi, gestione dello stock con giacenze e rotazione, penetrazione finanziaria e assicurativa, e produttivit&agrave; della forza vendita.</p>
-        <p>In 5 minuti di compilazione ottieni uno score su 100, una diagnosi direzionale per ogni area e la tua posizione in classifica rispetto alle altre concessionarie nel database &mdash; a livello nazionale, regionale e provinciale. Puoi ripeterlo a cadenza mensile con i dati aggiornati per monitorare il tuo avanzamento nel tempo.</p>
-        <div class="svc-features">
-          <div class="svc-feat">
-            <div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21H3V3"/><path d="M21 7l-5 5-4-4-6 6"/></svg></div>
-            <div><h4>Score complessivo su 100</h4><p>Da &ldquo;Zona Critica&rdquo; a &ldquo;Benchmark Leader&rdquo; con 5 livelli</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-            <div><h4>Dettaglio KPI con benchmark</h4><p>Margine ferro, servizi F&amp;I, penetrazione, giacenza, rotazione, efficienza</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
-            <div><h4>Monitoraggio mensile</h4><p>Ripeti l'analisi ogni mese per tracciare il tuo percorso di crescita</p></div>
-          </div>
-        </div>
+<!-- ═══ 3. AMI ═══ -->
+<div class="svc" id="svc-ami"><div class="svc-inner">
+  <div class="svc-header">
+    <div class="svc-num ami">03</div>
+    <h2>Automotive Margin Index</h2>
+    <p class="svc-lead">Come si posiziona la tua concessionaria rispetto al mercato? L'AMI &egrave; un'intervista guidata di 5 minuti che fotografa la tua azienda su 4 dimensioni fondamentali e ti confronta con i tuoi colleghi &mdash; in tutta Italia. La puoi ripetere ogni mese per tracciare la tua crescita.</p>
+  </div>
+  <div class="svc-content">
+    <div class="svc-text">
+      <p>Molti dealer non sanno dove si posizionano nel mercato. Sentono di marginare bene o male, ma non hanno un dato oggettivo. L'AMI risolve questo: analizza <strong>marginalit&agrave;</strong> (ferro e servizi), <strong>servizi F&amp;I</strong> (penetrazione finanziaria, assicurativa e garanzie), <strong>gestione stock</strong> (giacenza e rotazione) e <strong>produttivit&agrave;</strong> (efficienza della forza vendita).</p>
+      <p>In cambio ricevi uno <strong>score su 100</strong>, una diagnosi direzionale per ogni area &mdash; da &ldquo;Zona Critica&rdquo; a &ldquo;Benchmark Leader&rdquo; &mdash; e la tua posizione in classifica tra tutte le concessionarie nel database. E il bello? Puoi ripetere la compilazione <strong>ogni mese</strong> con i dati aggiornati per vedere concretamente l'impatto delle azioni correttive.</p>
+      <div class="svc-highlight">
+        <p><strong>Sei un salone piccolo? Ancora meglio.</strong> I piccoli saloni sono quelli dove l'impatto &egrave; pi&ugrave; immediato e visibile. Meno struttura da cambiare, pi&ugrave; velocit&agrave; di esecuzione. In poche settimane i numeri iniziano a muoversi.</p>
       </div>
-      <div class="svc-screens">
-        <div class="svc-screen"><img src="AMI1.png" alt="AMI - Score e classifica"><div class="svc-screen-caption">Score AMI con dettaglio per area e posizione nella classifica nazionale</div></div>
-        <div class="svc-screen"><img src="AMI2.png" alt="AMI - KPI e Diagnosi Direzionale"><div class="svc-screen-caption">Dettaglio KPI, confronto provinciale/regionale e diagnosi direzionale</div></div>
+      <div class="svc-features">
+        <div class="svc-feat"><div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><h4>Score su 100 con 5 livelli</h4><p>Da &ldquo;Zona Critica&rdquo; a &ldquo;Benchmark Leader&rdquo; &mdash; sai subito dove sei</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><h4>10+ KPI con benchmark di mercato</h4><p>Margine ferro, servizi, penetrazione, giacenza, rotazione, efficienza</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon navy"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h4>Classifica e monitoraggio mensile</h4><p>Nazionale, regionale, provinciale &mdash; traccia il tuo avanzamento nel tempo</p></div></div>
+      </div>
+      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri l'AMI &rarr;</a></div>
+    </div>
+    <div>
+      <div class="svc-gallery cols-1">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="AMI1.png" alt="AMI Score"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Score AMI con dettaglio per area e classifica nazionale</div></div>
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="AMI2.png" alt="AMI KPI"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Dettaglio KPI, confronto provinciale/regionale e diagnosi direzionale</div></div>
       </div>
     </div>
   </div>
-</div>
+</div></div>
 
-<!-- ═══ 4. RELAZIONI PROFESSIONALI ═══ -->
-<div class="svc" id="svc-rp">
-  <div class="svc-inner">
-    <div class="svc-header">
-      <div class="svc-num rp">04</div>
-      <h2>Relazioni Professionali</h2>
-      <p class="svc-lead">Una relazione professionale della vettura generata in automatico, senza perdere 30 minuti a farla a mano. Basta un copia-incolla dell'annuncio e il sistema fa tutto il resto.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-text">
-        <h3>La vettura raccontata come merita</h3>
-        <p>Inserisci il link e il testo dell'annuncio con un semplice copia-incolla: il sistema estrae automaticamente tutti i dati, gli accessori &mdash; da quelli che danno valore alla rivendita a quelli di serie &mdash; e genera una considerazione professionale tarata esattamente sulla vettura scelta.</p>
-        <p>Non un testo generico, ma un'analisi che valorizza le caratteristiche uniche di quel mezzo specifico. Il risultato &egrave; un file Word pronto da inviare al cliente, con la possibilit&agrave; di includere la simulazione finanziaria per una proposta completa.</p>
-        <div class="svc-features">
-          <div class="svc-feat">
-            <div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <div><h4>Generazione in 30 secondi</h4><p>Copia-incolla il link e il testo dell'annuncio e il sistema fa tutto</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <div><h4>Accessori e valore di rivendita</h4><p>Estrazione automatica degli optional rilevanti e di quelli che aumentano il valore</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-            <div><h4>Export Word e invio diretto</h4><p>File .docx professionale pronto per email o WhatsApp al cliente</p></div>
-          </div>
-        </div>
+<!-- ═══ 4. RP ═══ -->
+<div class="svc svc-alt" id="svc-rp"><div class="svc-inner">
+  <div class="svc-header">
+    <div class="svc-num rp">04</div>
+    <h2>Relazioni Professionali</h2>
+    <p class="svc-lead">Il tuo venditore ha appena avuto un contatto caldo per una vettura da 80.000&euro;. Quanto tempo ci mette a preparare una presentazione professionale? 30 minuti? Un'ora? Con le RP, 30 secondi. Copia-incolla l'annuncio e il sistema fa tutto il resto.</p>
+  </div>
+  <div class="svc-content reverse">
+    <div class="svc-text">
+      <p>Le Relazioni Professionali non sono un semplice &ldquo;copia-incolla dei dati dell'annuncio&rdquo;. Il sistema analizza la vettura in profondit&agrave;: estrae tutti gli accessori distinguendo quelli che <strong>aumentano il valore di rivendita</strong> da quelli standard, e genera una <strong>considerazione professionale personalizzata</strong> sulla vettura specifica.</p>
+      <p>Non un testo generico tipo &ldquo;ottima vettura, ben equipaggiata&rdquo;. Una vera analisi che valorizza le caratteristiche uniche di quel mezzo &mdash; dal tetto panoramico elettrico al sistema Burmester Surround, dalle sospensioni pneumatiche ai cerchi forgiati. Il cliente riceve un documento che comunica competenza, trasparenza e attenzione al dettaglio.</p>
+      <div class="svc-highlight">
+        <p><strong>Il risultato?</strong> Un file Word professionale pronto per essere inviato via email o WhatsApp. Con la possibilit&agrave; di includere la simulazione finanziaria per una proposta completa. Il venditore non perde tempo, il cliente percepisce un livello di servizio superiore. E tu chiudi pi&ugrave; trattative.</p>
       </div>
-      <div class="svc-screens">
-        <div class="svc-screen"><img src="RP1.png" alt="RP - Inserimento annuncio"><div class="svc-screen-caption">Interfaccia di inserimento: link annuncio, testo e simulazione finanziaria opzionale</div></div>
-        <div class="svc-screen"><img src="RP2.png" alt="RP - Scheda vettura generata"><div class="svc-screen-caption">Scheda vettura con dati tecnici, optional rilevanti e accessori di valore</div></div>
-        <div class="svc-screen"><img src="RP3.png" alt="RP - Considerazioni professionali"><div class="svc-screen-caption">Considerazioni professionali personalizzate e accessori che aumentano il valore di rivendita</div></div>
+      <div class="svc-features">
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Da 30 minuti a 30 secondi</h4><p>Copia-incolla link e testo dell'annuncio &mdash; il sistema fa tutto</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><h4>Analisi personalizzata, non generica</h4><p>Considerazioni professionali tarate sulle caratteristiche uniche del mezzo</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div><div><h4>Export Word pronto per il cliente</h4><p>File .docx professionale per email o WhatsApp, con simulazione finanziaria opzionale</p></div></div>
+      </div>
+      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri le RP &rarr;</a></div>
+    </div>
+    <div>
+      <div class="svc-gallery cols-1">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="RP1.png" alt="RP Input"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Inserimento: link annuncio, testo e simulazione finanziaria opzionale</div></div>
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="RP2.png" alt="RP Output"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Scheda vettura con dati, optional e accessori che aumentano il valore</div></div>
+      </div>
+      <div class="svc-gallery cols-1" style="margin-top:16px">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="RP3.png" alt="RP Considerazioni"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Considerazioni professionali personalizzate e accessori di valore</div></div>
       </div>
     </div>
   </div>
-</div>
+</div></div>
 
 <!-- ═══ 5. CRUSCOTTO ISTANTANEO ═══ -->
-<div class="svc" id="svc-cru">
-  <div class="svc-inner">
-    <div class="svc-header">
-      <div class="svc-num cru">05</div>
-      <h2>Cruscotto Istantaneo</h2>
-      <p class="svc-lead">Tutte le statistiche pi&ugrave; importanti della tua azienda in un cruscotto visuale aggiornato in tempo reale. Dalle vendite alla penetrazione F&amp;I, senza inserire un solo dato a mano.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-text">
-        <h3>I tuoi numeri, sempre sotto controllo</h3>
-        <p>Il Cruscotto Istantaneo raccoglie e visualizza i KPI fondamentali della tua concessionaria: vendite e fatturato per azienda, sede e venditore, penetrazione finanziaria e assicurativa, margini medi su ferro e servizi, ticket medio e analisi per marca e canale.</p>
-        <p>L'import dei dati avviene automaticamente allegando la copia del contratto e del riepilogo globale &mdash; nessun inserimento manuale. Il cruscotto si aggiorna in tempo reale, offrendoti una visione sempre attuale dell'andamento della tua attivit&agrave;.</p>
-        <div class="svc-features">
-          <div class="svc-feat">
-            <div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-            <div><h4>Dashboard multi-vista</h4><p>Vendite, margini, penetrazione F&amp;I, marketing &mdash; tutto in un'unica schermata</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
-            <div><h4>Import automatico da contratti</h4><p>Allega il riepilogo globale e i dati si caricano da soli, zero data entry</p></div>
-          </div>
-          <div class="svc-feat">
-            <div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
-            <div><h4>Analisi per marca, canale e periodo</h4><p>Filtra per anno, mese, azienda, sede, venditore, canale B2B/B2C</p></div>
-          </div>
-        </div>
+<div class="svc" id="svc-cru"><div class="svc-inner">
+  <div class="svc-header">
+    <div class="svc-num cru">05</div>
+    <h2>Cruscotto Istantaneo</h2>
+    <p class="svc-lead">Quanto fatturi questo mese? Qual &egrave; il tuo margine medio sul ferro? E la penetrazione finanziaria? Se per rispondere devi aprire Excel, chiamare l'amministrazione o aspettare il commercialista, hai un problema. Il Cruscotto Istantaneo te lo risolve.</p>
+  </div>
+  <div class="svc-content">
+    <div class="svc-text">
+      <p>Il Cruscotto raccoglie e visualizza tutti i KPI fondamentali della tua concessionaria in tempo reale: vendite e fatturato per azienda, sede e venditore, penetrazione finanziaria e assicurativa, margini medi su ferro e servizi, ticket medio, analisi per marca, canale B2B/B2C e periodo.</p>
+      <p>Il punto di forza? <strong>L'import dei dati avviene automaticamente.</strong> Basta allegare la copia del contratto e del riepilogo globale &mdash; nessun inserimento manuale, nessun data entry, nessuna perdita di tempo. Il cruscotto si aggiorna da solo, offrendoti una visione sempre attuale dell'andamento della tua attivit&agrave;.</p>
+      <div class="svc-highlight">
+        <p><strong>Filtra, esplora, decidi.</strong> Anno, mese, azienda, sede, venditore, reparto, canale, marca &mdash; ogni dato &egrave; filtrabile e incrociabile. Vuoi sapere quanto margina il Venditore 3 sulle Audi del canale B2C? Due click e hai la risposta. Questo &egrave; il controllo che ti mancava.</p>
       </div>
-      <div class="svc-screens">
-        <div class="svc-screen"><img src="Cruscotto1.png" alt="Cruscotto - Vendite e margini"><div class="svc-screen-caption">Panoramica vendite: margini, fatturato e trend per azienda e canale</div></div>
-        <div class="svc-screen"><img src="Cruscotto2.png" alt="Cruscotto - Margini e ticket medio"><div class="svc-screen-caption">Dettaglio margini medi ferro/servizi, analisi per marca e ticket medio</div></div>
-        <div class="svc-screen"><img src="Cruscotto3.png" alt="Cruscotto - Scaglioni e tipologia"><div class="svc-screen-caption">Scaglioni di vendita, mix generalista/premium/luxury e dettaglio veicoli</div></div>
-        <div class="svc-screen"><img src="Cruscotto4.png" alt="Cruscotto - Dettaglio finanziario"><div class="svc-screen-caption">Penetrazione F&amp;I, dettaglio finanziario per prodotto e reparto</div></div>
+      <div class="svc-features">
+        <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><h4>Dashboard multi-vista completa</h4><p>Vendite, margini, F&amp;I, marketing &mdash; tutto in un'unica schermata</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div><div><h4>Import automatico da contratti</h4><p>Allega il riepilogo globale, zero data entry &mdash; i dati si caricano da soli</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon teal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><div><h4>Filtri per marca, canale, venditore e periodo</h4><p>Ogni dato &egrave; incrociabile per analisi granulari in tempo reale</p></div></div>
+      </div>
+      <div class="svc-cta"><a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-primary">Scopri il Cruscotto &rarr;</a></div>
+    </div>
+    <div>
+      <div class="svc-gallery cols-2">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="Cruscotto1.png" alt="Cruscotto Vendite"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Vendite e margini per azienda e canale</div></div>
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="Cruscotto2.png" alt="Cruscotto Margini"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Margini medi e analisi per marca</div></div>
+      </div>
+      <div class="svc-gallery cols-2" style="margin-top:16px">
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="Cruscotto3.png" alt="Cruscotto Tipologia"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Scaglioni di vendita e mix tipologia</div></div>
+        <div class="svc-screen" onclick="openLightbox(this)"><img src="Cruscotto4.png" alt="Cruscotto F&I"><div class="svc-screen-zoom"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div><div class="svc-screen-caption">Penetrazione F&amp;I e dettaglio finanziario</div></div>
       </div>
     </div>
   </div>
-</div>
+</div></div>
+
+<!-- ═══ PERSONAL CAR SHOPPER ═══ -->
+<section class="private-section" id="privato"><div class="section-inner private-inner">
+  <div class="section-label">Alex 1st Class</div>
+  <h2 class="section-title">Personal Car Shopper</h2>
+  <p class="section-sub">Un servizio che non esiste. Fino ad ora. Vengo da te, trovo la tua auto, gestisco tutto e te la consegno. A casa tua o in azienda. I video lo dimostrano.</p>
+  <div class="private-grid">
+    <div class="private-text">
+      <h3>L'auto dei tuoi sogni,<br>consegnata a domicilio</h3>
+      <p>Non sei tu a venire in concessionaria. Sono io che vengo da te. Ti intervisto in una call per capire esattamente cosa cerchi, quali sono le tue esigenze reali e il tuo budget. Poi faccio il lavoro sporco: ricerco sul mercato europeo, negozio, verifico, gestisco tutta la burocrazia &mdash; immatricolazione, passaggio, assicurazione, finanziamento &mdash; e ti consegno la vettura direttamente in azienda o a casa tua.</p>
+      <p>Non lo fa nessuno. &Egrave; un servizio che ho creato perch&eacute; &egrave; quello che avrei voluto ricevere io come cliente: <strong>zero stress, zero sorprese, massima personalizzazione</strong>. E i video del canale Alex 1st Class sono l&igrave; a testimoniarlo &mdash; ogni consegna &egrave; una storia vera, raccontata con i protagonisti.</p>
+      <div class="private-steps">
+        <div class="private-step"><div class="private-step-num">Step 1</div><h4>Configurazione</h4><p>Compila il form con le tue preferenze e i tuoi desideri</p></div>
+        <div class="private-step"><div class="private-step-num">Step 2</div><h4>Call conoscitiva</h4><p>Ti chiamo, ti ascolto, capiamo insieme la vettura perfetta per te</p></div>
+        <div class="private-step"><div class="private-step-num">Step 3</div><h4>Ricerca &amp; gestione</h4><p>Cerco, negozio, verifico e gestisco tutta la burocrazia</p></div>
+        <div class="private-step"><div class="private-step-num">Step 4</div><h4>Consegna premium</h4><p>Te la porto a casa o in azienda. Un'esperienza, non una vendita</p></div>
+      </div>
+      <div class="private-cta">
+        <a href="https://airtable.com/app2cjsk4UDMxubJA/pagBw9AGTLQUClVuT/form" target="_blank" class="btn btn-gold btn-lg">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/><path d="M5 12h14"/></svg>
+          Configura la Tua Auto
+        </a>
+        <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-outline">Prenota una Call &rarr;</a>
+      </div>
+    </div>
+    <div class="private-videos">
+      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
+        <img src="yt-consegna.jpg" alt="Consegna Premium">
+        <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+      </div>
+      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
+        <img src="yt-decarli.jpg" alt="Leonardo Decarli">
+        <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+      </div>
+      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
+        <img src="yt-vr.jpg" alt="Realta Virtuale">
+        <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+      </div>
+      <div class="private-video" onclick="window.open('https://www.youtube.com/@unagiornatain','_blank')">
+        <img src="yt-podcast.jpg" alt="Podcast Innovario">
+        <div class="private-video-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+      </div>
+    </div>
+  </div>
+</div></section>
 
 <!-- CHI SONO -->
-<section class="about" id="chi-sono">
-  <div class="section-inner">
-    <div class="section-label">Chi sono</div>
-    <h2 class="section-title">Il percorso che mi ha reso<br>chi sono oggi</h2>
-    <div class="about-grid">
-      <div>
-        <div class="about-photo">
-          <img src="photo-bw.jpg" alt="Alessandro Tasso">
-          <div class="about-photo-overlay">
-            <h4>Alessandro Tasso</h4>
-            <p>Automotive Profit Manager</p>
-          </div>
-        </div>
+<section class="about" id="chi-sono"><div class="section-inner">
+  <div class="section-label">Chi sono</div>
+  <h2 class="section-title">Il percorso che mi ha reso<br>chi sono oggi</h2>
+  <div class="about-grid">
+    <div>
+      <div class="about-photo">
+        <img src="photo-bw.jpg" alt="Alessandro Tasso">
+        <div class="about-photo-overlay"><h4>Alessandro Tasso</h4><p>Automotive Profit Manager</p></div>
       </div>
-      <div class="about-content">
-        <h3>Classe '81, padovano DOC.<br>Da oltre 25 anni nel mondo dell'auto.</h3>
-        <div class="about-quote">&ldquo;Cosa ti rende davvero unico?&rdquo; &mdash; &Egrave; la domanda da cui parto sempre, con ogni azienda e ogni imprenditore che seguo.</div>
-        <p>Ho vissuto esperienze che mi hanno reso fiero, ma nulla conta pi&ugrave; del percorso che mi ha portato a essere la persona che sono oggi. Un percorso fatto di sfide, intuizioni e tanta voglia di evolvere.</p>
-        <p>Oggi affianco una ventina di concessionarie &mdash; di brand e multimarca &mdash; nella crescita e nello sviluppo. Le aiuto a vendere di pi&ugrave;, meglio e in modo differenziante. Amo la chiarezza, la concretezza e l'originalit&agrave;.</p>
-        <p>Sono anche un nerd appassionato: sviluppo tool, automatizzo flussi, semplifico il lavoro delle aziende. E se serve raccontare, salgo sul palco o accendo una camera. Racconto storie che vendono.</p>
-        <div class="about-highlights">
-          <div class="about-highlight">
-            <div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <div><h5>25+ anni di esperienza</h5><p>Nel settore automotive</p></div>
-          </div>
-          <div class="about-highlight">
-            <div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-            <div><h5>1.000+ trattative</h5><p>Gestite con successo</p></div>
-          </div>
-          <div class="about-highlight">
-            <div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <div><h5>Alex 1st Class</h5><p>Format proprietario</p></div>
-          </div>
-          <div class="about-highlight">
-            <div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-            <div><h5>Stratega UVP</h5><p>Per imprese e professionisti</p></div>
-          </div>
-        </div>
+    </div>
+    <div class="about-content">
+      <h3>Classe '81, padovano DOC.<br>Da oltre 25 anni nel mondo dell'auto.</h3>
+      <div class="about-quote">&ldquo;Cosa ti rende davvero unico?&rdquo; &mdash; &Egrave; la domanda da cui parto sempre, con ogni azienda e ogni imprenditore che seguo.</div>
+      <p>Ho vissuto esperienze che mi hanno reso fiero, ma nulla conta pi&ugrave; del percorso che mi ha portato a essere la persona che sono oggi. Un percorso fatto di sfide, intuizioni e tanta voglia di evolvere.</p>
+      <p>Oggi affianco una ventina di concessionarie &mdash; di brand e multimarca &mdash; nella crescita e nello sviluppo. Le aiuto a vendere di pi&ugrave;, meglio e in modo differenziante. Amo la chiarezza, la concretezza e l'originalit&agrave;.</p>
+      <p>Sono anche un nerd appassionato: sviluppo tool, automatizzo flussi, semplifico il lavoro delle aziende. E se serve raccontare, salgo sul palco o accendo una camera. Racconto storie che vendono.</p>
+      <div class="about-highlights">
+        <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><h5>25+ anni di esperienza</h5><p>Nel settore automotive</p></div></div>
+        <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div><h5>1.000+ trattative</h5><p>Gestite con successo</p></div></div>
+        <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><h5>Alex 1st Class</h5><p>Format proprietario</p></div></div>
+        <div class="about-highlight"><div class="about-highlight-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><h5>Stratega UVP</h5><p>Per imprese e professionisti</p></div></div>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- COME LAVORO -->
-<section class="process" id="come-lavoro">
-  <div class="section-inner">
-    <div class="section-label">Il percorso</div>
-    <h2 class="section-title">Come lavoro</h2>
-    <p class="section-sub">Un approccio strutturato, dalla consulenza iniziale ai risultati misurabili.</p>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-num">1</div><h4>Ascolto</h4><p>Ti ascolto per capire il tuo business, i tuoi punti di forza e le aree da migliorare.</p></div>
-      <div class="process-step"><div class="step-num">2</div><h4>Analisi</h4><p>Analizzo margini, processi, personale e posizionamento per individuare le leve giuste.</p></div>
-      <div class="process-step"><div class="step-num">3</div><h4>Strategia</h4><p>Definiamo insieme il piano d'azione con obiettivi chiari e strumenti concreti.</p></div>
-      <div class="process-step"><div class="step-num">4</div><h4>Risultati</h4><p>Ti affianco nell'esecuzione, monitoro le performance e ottimizziamo insieme.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- YOUTUBE -->
-<section class="youtube-section" id="youtube">
-  <div class="section-inner">
-    <div class="section-label">Contenuti video</div>
-    <h2 class="section-title">Una Giornata in&hellip;</h2>
-    <p class="section-sub">Il format video che racconta il mondo automotive da dentro. Docufilm, podcast e pillole per il posizionamento aziendale.</p>
-    <div class="youtube-grid">
-      <div class="youtube-content">
-        <h3>Storie che vendono, raccontate con visione</h3>
-        <p>Con &ldquo;Una Giornata in&hellip;&rdquo; entro nelle concessionarie e nelle aziende per raccontare la loro unicit&agrave; attraverso docufilm, podcast e contenuti social pensati per posizionare il brand e generare impatto mediatico reale.</p>
-        <p>Non &egrave; un semplice video: &egrave; un piano strategico di comunicazione che unisce UVP, storytelling e copertura mediatica nazionale.</p>
-        <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="btn btn-primary">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          Guarda il Canale YouTube
-        </a>
+<!-- FAQ -->
+<section class="faq-section" id="faq"><div class="section-inner">
+  <div class="section-label">Domande frequenti</div>
+  <h2 class="section-title">Hai qualche dubbio?</h2>
+  <p class="section-sub">Le risposte alle domande pi&ugrave; comuni su Dealer Suite e sul servizio Personal Car Shopper.</p>
+  <div class="faq-grid">
+    <div>
+      <div class="faq-col-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Per i Dealer</div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Quanto tempo serve per attivare Dealer Suite?</div>
+        <div class="faq-a"><p>L'attivazione &egrave; immediata: ti registri, ricevi 100 crediti omaggio e puoi iniziare subito a usare tutti e 5 i servizi. Per il Simulatore e il Cruscotto &egrave; prevista una breve fase di configurazione dove personalizziamo le finanziarie e i parametri del tuo salone &mdash; di solito bastano 1-2 call.</p></div>
       </div>
-      <div class="youtube-preview">
-        <div class="youtube-thumbnail">
-          <img src="photo-horizontal.jpeg" alt="Una Giornata in...">
-          <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="youtube-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></a>
-        </div>
-        <div class="youtube-channel-name">Una Giornata in&hellip;</div>
-        <div class="youtube-channel-sub">Docufilm &bull; Podcast &bull; Automotive</div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Funziona anche per saloni piccoli?</div>
+        <div class="faq-a"><p>Assolutamente s&igrave;, anzi: &egrave; proprio l&igrave; che l'impatto &egrave; pi&ugrave; immediato. I saloni piccoli hanno meno struttura da cambiare e pi&ugrave; velocit&agrave; di esecuzione. Ho visto saloni da 30 vetture iniziare a marginare in modo completamente diverso nel giro di poche settimane dall'attivazione.</p></div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Come funziona il sistema a crediti?</div>
+        <div class="faq-a"><p>Ogni servizio consuma un certo numero di crediti: lo SPI 1 credito per veicolo analizzato, le RP 10 crediti per report generato, l'AMI 100 crediti per analisi completa. Puoi ricaricare i crediti in qualsiasi momento direttamente dal portale. All'iscrizione ricevi 100 crediti omaggio per testare tutto.</p></div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Posso provare i servizi prima di impegnarmi?</div>
+        <div class="faq-a"><p>Certo. L'iscrizione &egrave; gratuita e i 100 crediti omaggio ti permettono di testare ogni servizio senza alcun impegno. Se vuoi una demo personalizzata, prenota una call gratuita e ti mostro tutto in diretta sul tuo salone.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="faq-col-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3v-6l2-5h9l4 5h3v6h-2"/></svg> Per i Privati</div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Come funziona il servizio Personal Car Shopper?</div>
+        <div class="faq-a"><p>Compili il form di configurazione con le tue preferenze, fissiamo una call conoscitiva dove ti ascolto e capiamo insieme la vettura perfetta per te. Da l&igrave; mi occupo di tutto: ricerca sul mercato europeo, negoziazione, verifiche tecniche, burocrazia completa (immatricolazione, passaggio, assicurazione, finanziamento) e consegna direttamente a casa tua o in azienda. Tu non devi fare nulla.</p></div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Quanto costa il servizio e su che auto lavori?</div>
+        <div class="faq-a"><p>Il costo del servizio varia in base alla vettura e alla complessit&agrave; della ricerca. Lavoro prevalentemente sul segmento premium europeo &mdash; Audi, BMW, Mercedes-Benz, Porsche &mdash; sia nuovo che usato recente, con ricerca su tutto il mercato europeo. Nella call conoscitiva ti spiego tutto in trasparenza, senza impegno.</p></div>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
 <!-- CTA -->
-<section class="cta-section" id="contatti">
-  <div class="section-inner cta-inner">
-    <div class="section-label" style="background:rgba(200,168,78,0.12);color:var(--gold)">Parliamone</div>
-    <h2>Pronto a fare il salto<br>di qualit&agrave;?</h2>
-    <p>Prenota una consulenza gratuita: ti ascolto, analizzo la tua situazione e ti dico come posso aiutarti. Gratis, per cominciare. Con entusiasmo, visione e risultati.</p>
-    <div class="cta-buttons">
-      <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-gold">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        Prenota una Call Gratuita
-      </a>
-      <a href="https://dealersuite.alessandrotasso.it" class="btn btn-outline">Accedi a Dealer Suite &rarr;</a>
-    </div>
-    <div class="cta-info">
-      <div class="cta-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@alessandrotasso.it</div>
-      <div class="cta-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Padova, Italia</div>
-    </div>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/alessandrotasso/" target="_blank" class="social-link" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-      <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="social-link" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-      <a href="mailto:info@alessandrotasso.it" class="social-link" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-    </div>
+<section class="cta-section" id="contatti"><div class="section-inner cta-inner">
+  <div class="section-label" style="background:rgba(200,168,78,0.12);color:var(--gold)">Parliamone</div>
+  <h2>Pronto a fare il salto<br>di qualit&agrave;?</h2>
+  <p>Prenota una consulenza gratuita: ti ascolto, analizzo la tua situazione e ti dico come posso aiutarti. Gratis, per cominciare. Con entusiasmo, visione e risultati.</p>
+  <div class="cta-buttons">
+    <a href="https://alessandrotasso.it/appuntamento-automotive" class="btn btn-gold">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Prenota una Call Gratuita</a>
+    <a href="https://dealersuite.alessandrotasso.it" class="btn btn-outline">Accedi a Dealer Suite &rarr;</a>
   </div>
-</section>
+  <div class="cta-info">
+    <div class="cta-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@alessandrotasso.it</div>
+    <div class="cta-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Padova, Italia</div>
+  </div>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/alessandrotasso/" target="_blank" class="social-link" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://www.youtube.com/@unagiornatain" target="_blank" class="social-link" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="mailto:info@alessandrotasso.it" class="social-link" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+  </div>
+</div></section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <img src="logo-white.png" alt="AT" class="footer-logo-img">
-      <span class="footer-copy">&copy; 2026 Alessandro Tasso. Tutti i diritti riservati.</span>
-    </div>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Termini di Servizio</a>
-      <a href="https://dealersuite.alessandrotasso.it">Dealer Suite</a>
-    </div>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-left">
+    <img src="logo-white.png" alt="AT" class="footer-logo-img">
+    <span class="footer-copy">&copy; 2026 Alessandro Tasso. Tutti i diritti riservati.</span>
   </div>
-</footer>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Termini di Servizio</a>
+    <a href="https://dealersuite.alessandrotasso.it">Dealer Suite</a>
+  </div>
+</div></footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(el){
+  var img=el.querySelector('img');
+  document.getElementById('lightbox-img').src=img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+</script>
 
 </body>
 </html>
