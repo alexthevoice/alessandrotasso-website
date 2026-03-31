@@ -367,7 +367,11 @@ section{padding:100px 32px}
 <section class="areas" id="cosa-faccio"><div class="section-inner">
   <div class="section-label">Cosa faccio</div>
   <h2 class="section-title">Tre aree, un unico obiettivo:<br>farti vendere meglio</h2>
-  <p class="section-sub">Consulenza, tecnologia e comunicazione al servizio di chi opera nel mondo dell'auto.</p>
+  <div style="max-width:100%;margin-bottom:48px;font-size:16px;color:var(--gray-600);line-height:1.8">
+    <p style="margin-bottom:16px">Ti ricordi Mr. Wolf in Pulp Fiction? &ldquo;Risolvo problemi.&rdquo; Ecco, nel mondo automotive quello sono io. Mi chiami quando i margini non tornano, quando lo stock non gira, quando i venditori vendono ma non marginano, quando il marketing brucia budget senza risultati. Arrivo, analizzo, agisco. Niente slide, niente teoria, niente &ldquo;ci rivediamo tra un mese per il follow-up&rdquo;. Risultati concreti, misurabili, dal giorno dopo.</p>
+    <p style="margin-bottom:16px">Non ho competitor. Non perch&eacute; lo dico io, ma perch&eacute; non esiste un'altra persona che unisce 25 anni di vendita sul campo, la capacit&agrave; di sviluppare software su misura, l'esperienza nella formazione di oltre 1.000 venditori e la visione strategica per posizionare un brand con docufilm e contenuti che lasciano il segno. Sono un imprenditore, un formatore, un venditore, un programmatore, un buyer, un marketer e &mdash; quando serve &mdash; uno showman. Tutto in una persona. &Egrave; questo che mi rende unico.</p>
+    <p style="margin-bottom:0">Vengo dal mondo dello sport professionistico: disciplina, ossessione per il risultato, zero scuse, zero giustificazioni. Se mi dici che &ldquo;il mercato &egrave; difficile&rdquo; ti rispondo che lo &egrave; per tutti &mdash; la differenza la fa chi ha gli strumenti giusti e la mentalit&agrave; giusta per affrontarlo. Io ti porto entrambi.</p>
+  </div>
   <div class="areas-grid">
     <div class="area-card">
       <div class="area-icon profit"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
@@ -692,8 +696,8 @@ section{padding:100px 32px}
         <div class="faq-a"><p>Lavoro in tutta Italia. La call conoscitiva avviene online, la ricerca &egrave; su tutto il mercato europeo e la consegna arriva direttamente da te &mdash; ovunque tu sia. Ho consegnato vetture dal Trentino alla Sicilia. La distanza non &egrave; un limite, &egrave; parte dell'esperienza.</p></div>
       </div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
-        <div class="faq-q">Come posso fidarmi se non ti ho mai incontrato?</div>
-        <div class="faq-a"><p>Capisco perfettamente. Per questo ho creato i video del canale Alex 1st Class: sono storie vere, con clienti veri, che mostrano l'intero processo dalla call iniziale alla consegna. Puoi anche leggere le recensioni su Google e sul mio profilo LinkedIn. Inoltre, la call conoscitiva &egrave; gratuita e senza impegno &mdash; ci conosciamo, ti spiego tutto e poi decidi tu.</p></div>
+        <div class="faq-q">Ma ti possono contattare solo imprenditori o anche privati?</div>
+        <div class="faq-a"><p>Possono contattarmi tutti. Il servizio Personal Car Shopper &egrave; dedicato a chiunque stia cercando un'auto &mdash; imprenditori, professionisti, famiglie, neopatentati. Anche se hai gi&agrave; un preventivo in mano e vuoi semplicemente un confronto neutro con qualcuno che se ne intende davvero: ti ascolto, analizzo l'offerta e ti do un consiglio onesto, anche solo per confermarti che quello che hai &egrave; gi&agrave; un buon affare. Nessun obbligo, nessuna pressione. Una chiacchierata tra te e un professionista che fa questo da 25 anni.</p></div>
       </div>
     </div>
   </div>
@@ -740,4 +744,20 @@ section{padding:100px 32px}
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scrip
+<script>
+function openLightbox(el){
+  var img=el.querySelector('img');
+  if(!img)return;
+  document.getElementById('lightbox-img').src=img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+</script>
+
+</body>
+</html>
