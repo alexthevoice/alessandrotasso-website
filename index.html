@@ -113,7 +113,7 @@ section{padding:100px 32px}
 .ds-intro .section-label{background:rgba(200,168,78,0.12);color:var(--gold)}
 .ds-intro .section-title{color:var(--white)}
 .ds-intro .section-sub{color:rgba(255,255,255,0.55)}
-.ds-intro-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
+.ds-intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
 .ds-intro-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px 16px;text-align:center;transition:all 0.3s;cursor:pointer;text-decoration:none}
 .ds-intro-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(200,168,78,0.3);transform:translateY(-2px)}
 .ds-intro-card-num{font-size:28px;font-weight:800;margin-bottom:6px}
@@ -291,16 +291,28 @@ section{padding:100px 32px}
   section,.svc{padding:64px 20px}
   .stats-bar-inner{grid-template-columns:1fr 1fr}
   .areas-grid{grid-template-columns:1fr}
-  .hero-inner{padding:48px 20px}
+  .hero-inner{padding:48px 20px;text-align:center}
+  .hero-badge{margin-left:auto;margin-right:auto}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-who{flex-direction:column;align-items:center}
+  .hero-who-btn{min-width:100%;justify-content:center}
+  .hero-card{text-align:center}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hero-stats-row2{grid-template-columns:repeat(3,1fr)}
   .about-highlights{grid-template-columns:1fr}
   .cta-info{flex-direction:column;gap:16px;align-items:center}
   .footer-inner{flex-direction:column;gap:20px;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
   .ds-intro-grid{grid-template-columns:1fr 1fr}
-  .hero-stats{grid-template-columns:repeat(3,1fr)}
-  .hero-who{flex-direction:column}
   .svc-gallery.cols-2{grid-template-columns:1fr}
+  .svc-header{text-align:center}
+  .svc-lead{margin-left:auto;margin-right:auto}
+  .svc-cta{justify-content:center!important}
   .private-videos{grid-template-columns:1fr}
   .private-steps{grid-template-columns:1fr}
+  .section-title{text-align:center}
+  .section-label{margin-left:auto;margin-right:auto}
+  .section-sub{margin-left:auto;margin-right:auto}
 }
 </style>
 </head>
@@ -360,7 +372,7 @@ section{padding:100px 32px}
   <div class="stat-item"><div class="stat-number accent">25+</div><div class="stat-label">Anni di esperienza<br>nel settore auto</div></div>
   <div class="stat-item"><div class="stat-number">1.000+</div><div class="stat-label">Venditori formati<br>in tutta Italia</div></div>
   <div class="stat-item"><div class="stat-number accent">20+</div><div class="stat-label">Concessionarie<br>seguite attivamente</div></div>
-  <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Strumenti digitali<br>per concessionarie</div></div>
+  <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Strumenti digitali<br>per concessionarie</div></div>
 </div></div>
 
 <!-- COSA FACCIO -->
@@ -397,7 +409,7 @@ section{padding:100px 32px}
 <!-- ═══ DEALER SUITE INTRO ═══ -->
 <section class="ds-intro" id="dealer-suite"><div class="section-inner">
   <div class="section-label">Dealer Suite</div>
-  <h2 class="section-title">5 strumenti, una piattaforma.<br>Tutto ci&ograve; che serve al tuo salone.</h2>
+  <h2 class="section-title">6 strumenti, una piattaforma.<br>Tutto ci&ograve; che serve al tuo salone.</h2>
   <p class="section-sub" style="max-width:100%">Dealer Suite &egrave; il portale operativo che ho costruito dopo 25 anni di vendita in salone. Non &egrave; un gestionale teorico: sono 5 tool pratici, pensati da un venditore per i venditori, che ti aiutano concretamente a <strong style="color:var(--gold)">sbloccare lo stock fermo</strong>, <strong style="color:var(--gold)">aumentare la penetrazione dei servizi finanziari e assicurativi</strong>, <strong style="color:var(--gold)">alzare i margini su ogni trattativa</strong> e <strong style="color:var(--gold)">portare la qualit&agrave; della relazione con il cliente finale a un livello superiore</strong>. Che tu sia un salone multimarca da 30 vetture o una concessionaria strutturata da 300, questi strumenti cambiano i numeri dal giorno dopo.</p>
   <div class="ds-intro-grid">
     <a href="#svc-sim" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--gold)">SIM</div><div class="ds-intro-card-name">Simulatore Multiservizi</div><div class="ds-intro-card-desc">Tutti i simulatori in uno</div></a>
@@ -405,6 +417,7 @@ section{padding:100px 32px}
     <a href="#svc-ami" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--white)">AMI</div><div class="ds-intro-card-name">Automotive Margin Index</div><div class="ds-intro-card-desc">Il tuo benchmark di mercato</div></a>
     <a href="#svc-rp" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--gold)">RP</div><div class="ds-intro-card-name">Relazioni Professionali</div><div class="ds-intro-card-desc">Report vettura in automatico</div></a>
     <a href="#svc-cru" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--teal)">CRI</div><div class="ds-intro-card-name">Cruscotto Istantaneo</div><div class="ds-intro-card-desc">KPI aziendali in tempo reale</div></a>
+    <a href="#svc-rvp" class="ds-intro-card"><div class="ds-intro-card-num" style="color:var(--gold)">RVP</div><div class="ds-intro-card-name">Ricerca Vettura Personalizzata</div><div class="ds-intro-card-desc">Sourcing su mercato europeo</div></a>
   </div>
   <div class="ds-intro-cta">
     <a href="https://dealersuite.alessandrotasso.it" class="btn btn-gold btn-lg btn-animated">Accedi a Dealer Suite &rarr;</a>
@@ -568,6 +581,41 @@ section{padding:100px 32px}
   <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://booking.alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-primary btn-lg">Scopri il Cruscotto &rarr;</a></div>
 </div></div>
 
+<!-- ═══ 6. RICERCA VETTURA PERSONALIZZATA ═══ -->
+<div class="svc svc-alt" id="svc-rvp"><div class="svc-inner">
+  <div class="svc-header">
+    <div class="svc-num rp">06</div>
+    <h2>Ricerca Vettura Personalizzata</h2>
+    <p class="svc-lead">Il tuo cliente sa cosa vuole ma non lo trovi a stock? Non perdere la vendita. Con la Ricerca Vettura Personalizzata il tuo salone diventa il punto di riferimento per qualsiasi richiesta &mdash; anche per veicoli che non hai fisicamente in esposizione.</p>
+  </div>
+  <div class="svc-content reverse">
+    <div class="svc-text">
+      <p>Ogni dealer conosce la frustrazione: il cliente entra, ha le idee chiare, ma la vettura che cerca non &egrave; nel tuo stock. Risultato? Lo perdi, va altrove, e con lui se ne va il margine. La Ricerca Vettura Personalizzata ribalta questa dinamica. Direttamente da Dealer Suite, imposti i parametri della ricerca &mdash; marca, modello, anno, chilometraggio, budget, colore, optional irrinunciabili &mdash; e il sistema ti supporta nella ricerca sul mercato europeo.</p>
+      <div class="svc-highlight">
+        <p><strong>Non sei pi&ugrave; vincolato al tuo stock.</strong> Puoi offrire ai tuoi clienti un servizio di sourcing professionale che ti differenzia dalla concorrenza. Il cliente non va altrove perch&eacute; sa che tu puoi trovargli esattamente quello che cerca. Fidelizzazione, margine aggiuntivo e posizionamento premium &mdash; tutto in un servizio.</p>
+      </div>
+      <p>&Egrave; lo stesso approccio che uso come Personal Car Shopper per i privati, adattato alle esigenze del dealer. Tu mantieni la relazione con il cliente, gestisci la trattativa e chiudi la vendita. Io ti metto a disposizione la rete, l'esperienza e gli strumenti per trovare il veicolo giusto al prezzo giusto.</p>
+      <div class="svc-features">
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div><div><h4>Ricerca su tutto il mercato europeo</h4><p>Accesso a una rete di fonti che il singolo dealer non potrebbe raggiungere da solo</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><h4>Parametri personalizzabili</h4><p>Marca, modello, anno, km, budget, colore, optional &mdash; tutto configurabile</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><h4>Il cliente resta tuo</h4><p>Tu gestisci la relazione e la vendita, il servizio lavora dietro le quinte</p></div></div>
+        <div class="svc-feat"><div class="svc-feat-icon gold"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><h4>Differenziazione competitiva</h4><p>Offri un servizio che i tuoi concorrenti non hanno &mdash; posizionamento premium</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:40px;text-align:center">
+        <div style="width:80px;height:80px;border-radius:20px;background:rgba(200,168,78,0.12);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px">Disponibile in Dealer Suite</h3>
+        <p style="font-size:14px;color:var(--gray-500);line-height:1.6;margin-bottom:24px">Il servizio Ricerca Vettura Personalizzata &egrave; integrato direttamente nel portale Dealer Suite. Accedi e inizia a cercare.</p>
+        <a href="https://dealersuite.alessandrotasso.it" class="btn btn-gold">Accedi a Dealer Suite &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <div class="svc-cta" style="justify-content:center;margin-top:48px"><a href="https://booking.alessandrotasso.it/appuntamento-automotive" target="_blank" class="btn btn-primary btn-lg">Scopri la Ricerca Vettura &rarr;</a></div>
+</div></div>
+
 <!-- ═══ PERSONAL CAR SHOPPER ═══ -->
 <section class="private-section" id="privato"><div class="section-inner private-inner">
   <div class="section-label">Alex 1st Class</div>
@@ -658,7 +706,7 @@ section{padding:100px 32px}
       <div class="faq-col-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Per i Dealer</div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-q">Quanto tempo serve per attivare Dealer Suite?</div>
-        <div class="faq-a"><p>L'attivazione &egrave; immediata: ti registri, ricevi 100 crediti omaggio e puoi iniziare subito a usare tutti e 5 i servizi. Per il Simulatore e il Cruscotto &egrave; prevista una fase di configurazione dove personalizziamo le finanziarie e i parametri del tuo salone, prenota una call e fissiamo l'appuntamento e/o una call.</p></div>
+        <div class="faq-a"><p>L'attivazione &egrave; immediata: ti registri, ricevi 100 crediti omaggio e puoi iniziare subito a usare tutti e 6 i servizi. Per il Simulatore e il Cruscotto &egrave; prevista una fase di configurazione dove personalizziamo le finanziarie e i parametri del tuo salone, prenota una call e fissiamo l'appuntamento e/o una call.</p></div>
       </div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-q">Funziona anche per saloni piccoli?</div>
